@@ -6,9 +6,6 @@ import {
 } from "lucide-react";
 import { BookText, Video, FlaskConical, FileText, BarChart } from "lucide-react";
 
-
-
-
   const formats = [
     { icon: <BookText className="w-8 h-8 text-orange-400" />, label: "Text" },
     { icon: <Video className="w-8 h-8 text-orange-400" />, label: "Videos" },
