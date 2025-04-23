@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AuroGurukul – Integral Education Platform
 
-## Getting Started
+**Awakening the Light Within – Through Integral Education**  
+A global educational initiative inspired by Sri Aurobindo and The Mother.
 
-First, run the development server:
+## 🧠 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+AuroGurukul is a progressive, value-based learning platform focused on nurturing learners across all dimensions—intellectual, emotional, physical, and spiritual. This web application is built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** to ensure a modern, responsive, and animated user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🧘 **Holistic Learning**: Integral Education model with Physical, Vital, Mental, and Spiritual growth.
+- 📚 **Curriculum**: From Preschool to Postgraduate, plus Skill Development, Art & Music, Sports, and Entrance Exams.
+- 🧑‍🏫 **Interactive Modules**: Videos, Experiments, AI Reports, and Assessments.
+- 🌐 **Learning Modes**: Online, Offline, and Hybrid options.
+- 🎨 **Framer Motion Animations**: For smooth transitions and interactive UI.
+- 🔐 **Future Enhancements**: Login/Signup, CMS integration, mentor-student dashboards, and more.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Bundler**: [Parcel](https://parceljs.org/) or default Next.js bundler (can be specified in scripts)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+

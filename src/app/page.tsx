@@ -7,166 +7,179 @@ import {
 import { BookText, Video, FlaskConical, FileText, BarChart } from "lucide-react";
 
   const formats = [
-    { icon: <BookText className="w-8 h-8 text-orange-400" />, label: "Text" },
-    { icon: <Video className="w-8 h-8 text-orange-400" />, label: "Videos" },
-    { icon: <FlaskConical className="w-8 h-8 text-orange-400" />, label: "Experiments" },
-    { icon: <FileText className="w-8 h-8 text-orange-400" />, label: "Tests" },
-    { icon: <BarChart className="w-8 h-8 text-orange-400" />, label: "AI-based Test Reports" },
+    { icon: <BookText className="w-12 h-12 text-orange-400" />, label: "Text" },
+    { icon: <Video className="w-12 h-12 text-orange-400" />, label: "Videos" },
+    { icon: <FlaskConical className="w-12 h-12 text-orange-400" />, label: "Experiments" },
+    { icon: <FileText className="w-12 h-12 text-orange-400" />, label: "Tests" },
+    { icon: <BarChart className="w-12 h-12 text-orange-400" />, label: "AI-based Test Reports" },
+  ];
+
+  const features = [
+    { icon: "/images/icons/online.svg", label: "Online tutoring" },
+    {
+      icon: (
+        <div className="border border-[#FBBF5D] rounded-full p-2">
+          <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        </div>
+      ),
+      label: "Lifetime access",
+    },
+    { icon: "/images/icons/active.svg", label: "Active learning" },
+    { icon: "/images/icons/course.svg", label: "10x courses" },
   ];
 
 export default function HeroSection() {
   return (
     <main className="overflow-x-hidden">
-      <section className="bg-white w-full overflow-hidden">
-        <div className="max-w-[1640px] h-auto md:h-[640px] bg-[#8DB3DB] mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-center gap-[60px] md:gap-[210px] pt-10">
-          {/* Left Side Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-xl order-2 md:order-1 text-center md:text-left"
-          >
-            <h1 className="text-3xl md:text-4xl font-bold text-[#214586] mb-4">
-              Awakening the Light Within –<br />
-              Through Integral Education
-            </h1>
-            <p className="text-[#214586] mb-6 text-[22px]">
-              Inspired by Sri Aurobindo and The Mother, AuroGurukul nurtures the
-              mind, body, and spirit of every learner.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg w-[180px]"
+      {/* Hero section */}
+      <section className="bg-white w-full overflow-hidden px-4">
+        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-none px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[60px] md:gap-[210px] py-10">
+            {/* Left Side Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-xl order-2 md:order-1 text-center md:text-left"
             >
-              Enrol Now
-            </motion.button>
-          </motion.div>
+              <h1 className="text-3xl md:text-4xl font-semibold font-primary text-[#214586] mb-4 leading-14">
+                Awakening the Light Within –<br />
+                Through Integral Education
+              </h1>
+              <p className="text-[#214586] mb-6 text-[22px]">
+                Inspired by Sri Aurobindo and The Mother, AuroGurukul nurtures
+                the mind, body, and spirit of every learner.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg w-[180px]"
+              >
+                Enrol Now
+              </motion.button>
+            </motion.div>
 
-          {/* Right Side Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 md:order-2"
-          >
-            <Image
-              src="/images/hero.webp" // Place the image here
-              alt="Happy Student"
-              width={480}
-              height={600}
-              className="w-full h-[600px] max-w-xl mx-auto relative"
-            />
-          </motion.div>
+            {/* Right Side Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="order-1 md:order-2"
+            >
+              <Image
+                src="/images/hero.webp"
+                alt="Happy Student"
+                width={480}
+                height={600}
+                className="w-full h-[600px] max-w-xl mx-auto relative"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
+      {/* Hero section End */}
 
       {/* Features */}
       <section className="w-full py-16 px-4 bg-white overflow-hidden">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-[#214586]">
-          <div className="flex flex-row items-center gap-2 text-center">
-            <Image
-              src="/images/icons/online.svg"
-              alt="Online tutoring"
-              width={60}
-              height={60}
-            />{" "}
-            <span className="font-bold font-primary text-2xl">
-              Online tutoring
-            </span>
-          </div>
-          <div className="flex flex-row items-center gap-2 text-center">
-            <div className="border border-[#FBBF5D] rounded-full p-2">
-              <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        <div className="max-w-[1640px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-[#214586] text-center">
+          {features.map((item, i) => (
+            <div
+              key={i}
+              className="flex flex-row items-center gap-8 w-fit mx-auto"
+            >
+              {typeof item.icon === "string" ? (
+                <Image
+                  src={item.icon}
+                  alt={item.label}
+                  width={60}
+                  height={60}
+                />
+              ) : (
+                item.icon
+              )}
+              <span className="font-bold font-primary text-xl sm:text-2xl">
+                {item.label}
+              </span>
             </div>
-            <span className="font-bold font-primary text-2xl">
-              Lifetime access
-            </span>
-          </div>
-          <div className="flex flex-row items-center gap-2 text-center">
-            <Image
-              src="/images/icons/active.svg"
-              alt="Online tutoring"
-              width={60}
-              height={60}
-            />{" "}
-            <span className="font-bold font-primary text-2xl">
-              Active learning
-            </span>
-          </div>
-          <div className="flex flex-row items-center gap-2 text-center">
-            <Image
-              src="/images/icons/course.svg"
-              alt="Online tutoring"
-              width={60}
-              height={60}
-            />{" "}
-            <span className="font-bold font-primary text-2xl">10x courses</span>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* About Us */}
-      <section className="w-full py-20 px-20 bg-[#FAFAFA] overflow-hidden">
+      <section className="w-full py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#FAFAFA] overflow-hidden">
         <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[#EE842C] font-bold leading-[35px] font-primary text-[34px] mb-2">
+          <h2 className="text-[#EE842C] font-bold text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight font-primary">
             About Us
           </h2>
-          <h3 className="text-[#214586] font-bold leading-[35px] text-xl md:text-2xl mb-4">
+          <h3 className="text-[#214586] font-semibold text-lg sm:text-xl md:text-2xl mb-8 leading-snug font-primary">
             AUROGURUKUL – A Progressive and Futuristic Learning Platform
           </h3>
-          <p className="text-[#214586] text-base md:text-lg leading-[35px] font-secondary font-regular mb-4">
-            AuroGurukul is a global educational initiative inspired by the
-            timeless ideals of The Mother and Sri Aurobindo. Founded by a group
-            of educationists, researchers, and entrepreneurs—many of whom have
-            studied or taught at the Sri Aurobindo International Centre of
-            Education (SAICE)—AuroGurukul aspires to offer the world a living
-            model of Integral Education.
-          </p>
-          <p className="text-[#214586] text-base md:text-lg leading-[35px] mb-4 font-secondary font-regular">
-            Our mission is to foster the development of every learner across the
-            four key dimensions of being—Physical, Vital (emotional), Mental,
-            and Spiritual—through a carefully designed, dynamic curriculum that
-            blends academic excellence with personal growth.
-          </p>
-          <p className="text-[#214586] text-base md:text-lg leading-[35px] mb-4 font-secondary font-regular">
-            At AuroGurukul, we believe that education should awaken the full
-            potential of the individual. By progressing across all
-            domains—Science, Mathematics, Logic, Language, Arts, Sports, and
-            Values—students not only achieve academic mastery but also cultivate
-            self-awareness, inner strength, and a lifelong love for learning.
-          </p>
-          <p className="text-[#214586] text-base md:text-lg leading-[35px] font-secondary font-regular">
-            We don’t just prepare students for exams—we prepare them for life.
-            AuroGurukul nurtures champions who are conscious, competent, and
-            compassionate, ready to lead and serve a world in transition.
-          </p>
+          <div className="space-y-6 text-[#214586] text-sm sm:text-base md:text-lg leading-[35px] font-secondary">
+            <p>
+              AuroGurukul is a global educational initiative inspired by the
+              timeless ideals of The Mother and Sri Aurobindo. Founded by a
+              group of educationists, researchers, and entrepreneurs—many of
+              whom have studied or taught at the Sri Aurobindo International
+              Centre of Education (SAICE)—AuroGurukul aspires to offer the world
+              a living model of Integral Education.
+            </p>
+            <p>
+              Our mission is to foster the development of every learner across
+              the four key dimensions of being—Physical, Vital (emotional),
+              Mental, and Spiritual—through a carefully designed, dynamic
+              curriculum that blends academic excellence with personal growth.
+            </p>
+            <p>
+              At AuroGurukul, we believe that education should awaken the full
+              potential of the individual. By progressing across all
+              domains—Science, Mathematics, Logic, Language, Arts, Sports, and
+              Values—students not only achieve academic mastery but also
+              cultivate self-awareness, inner strength, and a lifelong love for
+              learning.
+            </p>
+            <p>
+              We don’t just prepare students for exams—we prepare them for life.
+              AuroGurukul nurtures champions who are conscious, competent, and
+              compassionate, ready to lead and serve a world in transition.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* mission & vision */}
-      <section className="grid grid-cols-1 md:grid-cols-2 w-full h-[370px] overflow-hidden">
-        <div className="bg-[#214586] text-white px-8 py-12 text-center items-center justify-center flex flex-col">
-          <h3 className="text-xl font-bold mb-2 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-yellow-400 rounded-full"></span> Vision
-          </h3>
-          <p className="text-sm md:text-base leading-[35px] max-w-lg">
-            To ignite a lifelong love for learning through a holistic,
-            value-based education system that nurtures all dimensions of a
-            child’s being—intellectual, physical, emotional, and spiritual.
-          </p>
-        </div>
-        <div className="bg-white text-[#214586] px-8 py-12 text-center items-center justify-center flex flex-col">
-          <h3 className="text-xl font-bold mb-2 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-yellow-400 rounded-full"></span> Mission
-          </h3>
-          <p className="text-sm md:text-base leading-[35px] max-w-lg">
-            To implement the ideals of integral education by designing engaging
-            curricula and offering personalized learning experiences in
-            academics, sports, arts, music, and life skills. We empower students
-            to grow into conscious, compassionate, and competent individuals
-            ready to meet the challenges of life.
-          </p>
+      <section className="w-full overflow-hidden bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-[670px] md:h-[370px]">
+          {/* Vision Box */}
+          <div className="bg-[#214586] text-white px-6 sm:px-10 flex items-center justify-center text-center">
+            <div className="max-w-lg">
+              <h3 className="text-[34px] font-bold font-primary mb-8 flex items-center justify-center gap-2">
+                <span className="w-6 h-6 bg-yellow-400 rounded-full"></span>{" "}
+                Vision
+              </h3>
+              <p className="text-sm sm:text-base leading-[35px] font-regular font-secondary">
+                To ignite a lifelong love for learning through a holistic,
+                value-based education system that nurtures all dimensions of a
+                child’s being— intellectual, physical, emotional, and spiritual.
+              </p>
+            </div>
+          </div>
+
+          {/* Mission Box */}
+          <div className="bg-white text-[#214586] px-6 sm:px-10 flex items-center justify-center text-center">
+            <div className="max-w-lg">
+              <h3 className="text-[34px] font-bold font-primary mb-8 flex items-center justify-center gap-4">
+                <span className="w-6 h-6 bg-yellow-400 rounded-full"></span>{" "}
+                Mission
+              </h3>
+              <p className="text-sm sm:text-base leading-[35px] font-regular font-secondary">
+                To implement the ideals of integral education by designing
+                engaging curricula and offering personalized learning
+                experiences in academics, sports, arts, music, and life skills.
+                We empower students to grow into conscious, compassionate, and
+                competent individuals ready to meet the challenges of life.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -195,7 +208,7 @@ export default function HeroSection() {
               <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4">
                 What is Integral Education?
               </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-relaxed">
+              <p className="text-base md:text-lg font-secondary font-regular leading-[35px]">
                 Integral Education is a transformative approach to learning that
                 goes beyond conventional academics. It seeks the harmonious
                 development of all parts of the being—body, mind, vital
@@ -212,10 +225,10 @@ export default function HeroSection() {
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <div className="text-white max-w-xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 ">
+            <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 ">
               Why is it Relevant Today?
             </h3>
-            <p className="text-base md:text-lg leading-relaxed">
+            <p className="text-base md:text-lg leading-[35px] font-secondary font-regular">
               In an age of information overload and academic pressure,
               traditional systems often overlook emotional well-being,
               creativity, and moral grounding. Integral Education addresses this
@@ -256,7 +269,7 @@ export default function HeroSection() {
               <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4">
                 How Does It Add Value to Mainstream Curriculums?
               </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-relaxed">
+              <p className="text-base md:text-lg font-secondary font-regular leading-[35px]">
                 Integral Education can be beautifully woven into existing
                 frameworks like CBSE, ICSE, IB, CAIE, GCSE, and more. It
                 enhances the curriculum by adding depth, meaning, and real-world
@@ -268,7 +281,7 @@ export default function HeroSection() {
       </section>
 
       <section className="w-full py-20 px-4 bg-[#214586] text-white">
-        <div className="max-w-[1440px] mx-auto text-center mb-12">
+        <div className="max-w-[1640px] mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#FBBF5D]">
             Integral Education: A New Paradigm of Learning
           </h2>
@@ -303,10 +316,10 @@ export default function HeroSection() {
           ].map((item, index) => (
             <div key={index} className="pt-4">
               <div className="w-35 border-t-2 border-white mb-2"></div>
-              <h3 className="font-bold text-md font-secondary text-[#FBBF5D] mb-2">
+              <h3 className="font-bold text-[18px] font-secondary text-[#FBBF5D] mb-2">
                 {item.title}:
               </h3>
-              <p className="text-white text-md font-secondary leading-relaxed">
+              <p className="text-white text-[18px] font-secondary leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -316,7 +329,7 @@ export default function HeroSection() {
 
       <section className="w-full py-20 px-4 bg-white">
         <div className="max-w-[1440px] mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#EE842C]">
+          <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#EE842C]">
             Our Curriculum
           </h2>
         </div>
@@ -351,9 +364,9 @@ export default function HeroSection() {
           {formats.map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 text-[#214586] text-lg font-semibold"
+              className="flex items-center gap-2 text-[#214586] text-lg font-bold font-primary"
             >
-              <div className="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center">
+              <div className="w-15 h-15 rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center">
                 {item.icon}
               </div>
               {item.label}
@@ -361,14 +374,14 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="bg-[#8DB3DB] max-w-4xl mx-auto py-12 px-6 rounded-xl">
-          <h4 className="text-[#214586] font-semibold text-xl md:text-2xl mb-2">
+        <div className="bg-[#8DB3DB] max-w-7xl mx-auto py-12 px-6 ">
+          <h4 className="text-[#214586] font-bold font-primary text-xl md:text-2xl mb-2">
             Join Us in Shaping the Future of Learning
           </h4>
-          <p className="text-[#214586] font-semibold mb-1">
+          <p className="text-[#214586] text-[20px] font-bold font-secondary mb-1">
             Admissions Open for 2025
           </p>
-          <p className="text-[#214586] mb-6">
+          <p className="text-[#214586] mb-6 text-[20px] font-semibold font-secondary">
             Online | Offline | Hybrid Options Available
           </p>
           <button className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg">

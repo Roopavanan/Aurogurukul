@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="w-full px-4 md:px-10 py-4 bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between">
+      <div className="max-w-[1640px] mx-auto flex items-center justify-between">
         {/* Logo + Title */}
         <div className="flex items-center gap-3">
           <Image
@@ -20,7 +20,7 @@ export default function Header() {
             className="w-25 h-15 object-contain"
           />
           <div className="leading-tight">
-            <span className="text-[#6EA1D6] font-semibold text-lg">
+            <span className="text-[#6EA1D6] font-bold text-lg">
               AUROGURUKUL
             </span>
             <div className="text-xs text-[#6EA1D6] text-bold font-secondary text-center">JOY OF LEARNING</div>
@@ -28,7 +28,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-[60px] items-center font-semibold text-[#214586]">
+        <nav className="hidden md:flex gap-[60px] items-center font-semibold ml-22 font-secondary text-[#214586]">
           <Link href="#" className="hover:text-[#6EA1D6] transition">
             Home
           </Link>
