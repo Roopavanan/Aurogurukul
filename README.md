@@ -26,12 +26,6 @@ AuroGurukul is a progressive, value-based learning platform focused on nurturing
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Bundler**: [Parcel](https://parceljs.org/) or default Next.js bundler (can be specified in scripts)
 
----
-
-## 🛠️ Project Structure
-
----
 
 
