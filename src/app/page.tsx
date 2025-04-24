@@ -11,17 +11,18 @@ import {
 } from "lucide-react";
 import EnrollModal from "@/components/EnrollModal";
 import { useState } from "react";
+import CurriculumBundles from "@/components/CurriculumBundles";
 
 const formats = [
-  { icon: <BookText className="w-12 h-12 text-orange-400" />, label: "Text" },
-  { icon: <Video className="w-12 h-12 text-orange-400" />, label: "Videos" },
+  { icon: <BookText className="w-8 h-8 text-orange-400" />, label: "Text" },
+  { icon: <Video className="w-8 h-8 text-orange-400" />, label: "Videos" },
   {
-    icon: <FlaskConical className="w-12 h-12 text-orange-400" />,
+    icon: <FlaskConical className="w-8 h-8 text-orange-400" />,
     label: "Experiments",
   },
-  { icon: <FileText className="w-12 h-12 text-orange-400" />, label: "Tests" },
+  { icon: <FileText className="w-8 h-8 text-orange-400" />, label: "Tests" },
   {
-    icon: <BarChart className="w-12 h-12 text-orange-400" />,
+    icon: <BarChart className="w-8 h-8 text-orange-400" />,
     label: "AI-based Test Reports",
   },
 ];
@@ -383,6 +384,8 @@ export default function HeroSection() {
       </section>
       {/* curriculum end */}
 
+      <CurriculumBundles/>
+
       {/* Domain */}
       <section className="w-full py-20 px-4 bg-white text-center">
         <h3 className="text-[#214586] font-semibold text-2xl font-primary mb-6">
@@ -394,7 +397,7 @@ export default function HeroSection() {
               key={index}
               className="flex items-center gap-3 text-[#214586] text-base md:text-lg font-bold font-primary max-w-full"
             >
-              <div className="w-15 h-15 m rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 m rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center shrink-0">
                 {item.icon}
               </div>
               <span className="whitespace-normal break-words">

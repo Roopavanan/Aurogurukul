@@ -23,7 +23,7 @@ export default function Header() {
             <span className="text-[#6EA1D6] font-bold text-lg">
               AUROGURUKUL
             </span>
-            <div className="text-xs text-[#6EA1D6] font-semibold text-center">
+            <div className="text-xs text-[#214586] font-semibold text-center">
               JOY OF LEARNING
             </div>
           </div>
