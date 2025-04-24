@@ -1,40 +1,54 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Fingerprint } from "lucide-react";
 import {
-  Fingerprint,
+  BookText,
+  Video,
+  FlaskConical,
+  FileText,
+  BarChart,
 } from "lucide-react";
-import { BookText, Video, FlaskConical, FileText, BarChart } from "lucide-react";
+import EnrollModal from "@/components/EnrollModal";
+import { useState } from "react";
 
-  const formats = [
-    { icon: <BookText className="w-12 h-12 text-orange-400" />, label: "Text" },
-    { icon: <Video className="w-12 h-12 text-orange-400" />, label: "Videos" },
-    { icon: <FlaskConical className="w-12 h-12 text-orange-400" />, label: "Experiments" },
-    { icon: <FileText className="w-12 h-12 text-orange-400" />, label: "Tests" },
-    { icon: <BarChart className="w-12 h-12 text-orange-400" />, label: "AI-based Test Reports" },
-  ];
+const formats = [
+  { icon: <BookText className="w-12 h-12 text-orange-400" />, label: "Text" },
+  { icon: <Video className="w-12 h-12 text-orange-400" />, label: "Videos" },
+  {
+    icon: <FlaskConical className="w-12 h-12 text-orange-400" />,
+    label: "Experiments",
+  },
+  { icon: <FileText className="w-12 h-12 text-orange-400" />, label: "Tests" },
+  {
+    icon: <BarChart className="w-12 h-12 text-orange-400" />,
+    label: "AI-based Test Reports",
+  },
+];
 
-  const features = [
-    { icon: "/images/icons/online.svg", label: "Online tutoring" },
-    {
-      icon: (
-        <div className="border border-[#FBBF5D] rounded-full p-2">
-          <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
-        </div>
-      ),
-      label: "Lifetime access",
-    },
-    { icon: "/images/icons/active.svg", label: "Active learning" },
-    { icon: "/images/icons/course.svg", label: "10x courses" },
-  ];
+const features = [
+  { icon: "/images/icons/online.svg", label: "Online tutoring" },
+  {
+    icon: (
+      <div className="border border-[#FBBF5D] rounded-full p-2">
+        <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+      </div>
+    ),
+    label: "Lifetime access",
+  },
+  { icon: "/images/icons/active.svg", label: "Active learning" },
+  { icon: "/images/icons/course.svg", label: "10x courses" },
+];
 
 export default function HeroSection() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
         <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-none px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[60px] md:gap-[210px] py-10">
+          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] md:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -42,17 +56,17 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="max-w-xl order-2 md:order-1 text-center md:text-left"
             >
-              <h1 className="text-3xl md:text-4xl font-semibold font-primary text-[#214586] mb-4 leading-14">
-                Awakening the Light Within –<br />
-                Through Integral Education
+              <h1 className="text-2xl md:text-4xl font-semibold font-primary text-[#214586] mb-4 leading-14">
+                Awakening the Light Within - Through Integral Education
               </h1>
-              <p className="text-[#214586] mb-6 text-[22px]">
+              <p className="text-[#214586] mb-6 md:text-[22px] text-[18px]">
                 Inspired by Sri Aurobindo and The Mother, AuroGurukul nurtures
                 the mind, body, and spirit of every learner.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setModalOpen(true)} // ← This line fixes it!
                 className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg w-[180px]"
               >
                 Enrol Now
@@ -71,7 +85,7 @@ export default function HeroSection() {
                 alt="Happy Student"
                 width={480}
                 height={600}
-                className="w-full h-[600px] max-w-xl mx-auto relative"
+                className="w-full md:h-[600px] h-[500px] max-w-xl mx-auto relative top-10 md:top-5"
               />
             </motion.div>
           </div>
@@ -85,7 +99,7 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-8 w-fit mx-auto"
+              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
@@ -97,13 +111,14 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-xl sm:text-2xl">
+              <span className="font-bold font-primary text-[18px] sm:text-2xl">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
       </section>
+      {/* Feature End */}
 
       {/* About Us */}
       <section className="w-full py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#FAFAFA] overflow-hidden">
@@ -145,6 +160,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      {/* About end */}
 
       {/* mission & vision */}
       <section className="w-full overflow-hidden bg-white">
@@ -182,7 +198,9 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      {/* mission & vision end */}
 
+      {/* Integral education */}
       <section className="w-full py-20 px-4 bg-[#F9F9F9] overflow-hidden">
         <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-12">
@@ -205,10 +223,10 @@ export default function HeroSection() {
 
             {/* Text */}
             <div className="text-[#214586] max-w-6xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold font-primary text-center md:text-start mb-4">
                 What is Integral Education?
               </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-[35px]">
+              <p className="text-base md:text-lg font-secondary font-regular leading-[35px] text-center md:text-start">
                 Integral Education is a transformative approach to learning that
                 goes beyond conventional academics. It seeks the harmonious
                 development of all parts of the being—body, mind, vital
@@ -220,15 +238,17 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      {/* Integral education end */}
 
+      {/* Relevant today */}
       <section className="w-full py-20 px-4 md:px-6 lg:px-8 bg-[#214586]">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <div className="text-white max-w-xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 ">
+            <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 text-center md:text-start">
               Why is it Relevant Today?
             </h3>
-            <p className="text-base md:text-lg leading-[35px] font-secondary font-regular">
+            <p className="text-base md:text-lg leading-[35px] font-secondary font-regular text-center md:text-start">
               In an age of information overload and academic pressure,
               traditional systems often overlook emotional well-being,
               creativity, and moral grounding. Integral Education addresses this
@@ -249,7 +269,9 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      {/* relevant today end */}
 
+      {/* mainstream */}
       <section className="w-full py-20 px-4 bg-[#F9F9F9] overflow-hidden">
         <div className="max-w-[1440px] mx-auto">
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-[69px] items-center py-10">
@@ -266,10 +288,10 @@ export default function HeroSection() {
 
             {/* Text */}
             <div className="text-[#214586] max-w-6xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 text-center md:text-start">
                 How Does It Add Value to Mainstream Curriculums?
               </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-[35px]">
+              <p className="text-base md:text-lg font-secondary font-regular leading-[35px] text-center md:text-start">
                 Integral Education can be beautifully woven into existing
                 frameworks like CBSE, ICSE, IB, CAIE, GCSE, and more. It
                 enhances the curriculum by adding depth, meaning, and real-world
@@ -279,7 +301,9 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      {/* mainstream end */}
 
+      {/* Integral Education  */}
       <section className="w-full py-20 px-4 bg-[#214586] text-white">
         <div className="max-w-[1640px] mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#FBBF5D]">
@@ -326,7 +350,9 @@ export default function HeroSection() {
           ))}
         </div>
       </section>
+      {/* Integaral education end */}
 
+      {/* Curriculum */}
       <section className="w-full py-20 px-4 bg-white">
         <div className="max-w-[1440px] mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#EE842C]">
@@ -355,21 +381,25 @@ export default function HeroSection() {
           ))}
         </div>
       </section>
+      {/* curriculum end */}
 
+      {/* Domain */}
       <section className="w-full py-20 px-4 bg-white text-center">
         <h3 className="text-[#214586] font-semibold text-2xl font-primary mb-6">
           Each domain is carefully crafted with content formats like:
         </h3>
-        <div className="flex flex-wrap justify-center py-10 gap-20 mb-16">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center items-start md:items-center gap-10 md:gap-14 py-10 px-4 md:px-10 mb-16">
           {formats.map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 text-[#214586] text-lg font-bold font-primary"
+              className="flex items-center gap-3 text-[#214586] text-base md:text-lg font-bold font-primary max-w-full"
             >
-              <div className="w-15 h-15 rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center">
+              <div className="w-15 h-15 m rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center shrink-0">
                 {item.icon}
               </div>
-              {item.label}
+              <span className="whitespace-normal break-words">
+                {item.label}
+              </span>
             </div>
           ))}
         </div>
@@ -384,11 +414,20 @@ export default function HeroSection() {
           <p className="text-[#214586] mb-6 text-[20px] font-semibold font-secondary">
             Online | Offline | Hybrid Options Available
           </p>
-          <button className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg">
+          <button
+            onClick={() => setModalOpen(true)}
+            className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg"
+          >
             Enroll Now
           </button>
+
+          <EnrollModal
+            isOpen={isModalOpen}
+            onClose={() => setModalOpen(false)}
+          />
         </div>
       </section>
+      {/* Domain end */}
     </main>
   );
 }

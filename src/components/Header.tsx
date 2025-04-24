@@ -8,39 +8,38 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full px-4 md:px-10 py-4 bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-[1640px] mx-auto flex items-center justify-between">
+    <header className="w-full px-4 md:px-10 py-4 bg-white  sticky top-0 z-50">
+      <div className="max-w-[1600px] w-full mx-auto flex items-center justify-between flex-wrap overflow-x-hidden">
         {/* Logo + Title */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 min-w-0 overflow-hidden">
           <Image
-            src="/images/logo.svg" // place your image in public/logo.png
+            src="/images/logo.svg"
             alt="Aurogurukul Logo"
             width={40}
             height={40}
-            className="w-25 h-15 object-contain"
+            className="w-20 h-10 md:w-25 md:h-15 object-contain"
           />
-          <div className="leading-tight">
+          <div className="leading-tight whitespace-nowrap">
             <span className="text-[#6EA1D6] font-bold text-lg">
               AUROGURUKUL
             </span>
-            <div className="text-xs text-[#6EA1D6] text-bold font-secondary text-center">JOY OF LEARNING</div>
+            <div className="text-xs text-[#6EA1D6] font-semibold text-center">
+              JOY OF LEARNING
+            </div>
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-[60px] items-center font-semibold ml-22 font-secondary text-[#214586]">
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Home
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            About Us
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Our Curriculum
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Enrol Now
-          </Link>
+        <nav className="hidden md:flex flex-wrap gap-10 items-center font-semibold font-secondary text-[#214586]">
+          {["Home", "About Us", "Our Curriculum", "Enrol Now"].map((label) => (
+            <Link
+              key={label}
+              href="#"
+              className="hover:text-[#6EA1D6] transition"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
         {/* Login Button */}
@@ -83,18 +82,15 @@ export default function Header() {
           transition={{ duration: 0.2 }}
           className="md:hidden mt-4 px-4 flex flex-col gap-4 font-semibold text-[#214586]"
         >
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Home
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            About Us
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Our Curriculum
-          </Link>
-          <Link href="#" className="hover:text-[#6EA1D6] transition">
-            Enrol Now
-          </Link>
+          {["Home", "About Us", "Our Curriculum", "Enrol Now"].map((label) => (
+            <Link
+              key={label}
+              href="#"
+              className="hover:text-[#6EA1D6] transition"
+            >
+              {label}
+            </Link>
+          ))}
           <Link
             href="#"
             className="bg-[#214586] hover:bg-[#6EA1D6] text-white px-5 py-2 rounded-full text-sm font-semibold transition text-center"
