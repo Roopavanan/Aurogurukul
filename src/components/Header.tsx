@@ -7,6 +7,14 @@ import { useState } from "react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/#about" },
+    { label: "Our Curriculum", href: "/#curriculum" },
+    { label: "Enrol Now", href: "/#enrol" },
+  ];
+
+
   return (
     <header className="w-full px-4 md:px-10 py-4 bg-white  sticky top-0 z-50">
       <div className="max-w-[1600px] w-full mx-auto flex items-center justify-between flex-wrap overflow-x-hidden">
@@ -30,11 +38,11 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex flex-wrap gap-10 items-center font-semibold font-secondary text-[#214586]">
-          {["Home", "About Us", "Our Curriculum", "Enrol Now"].map((label) => (
+        <nav className="hidden lg:flex flex-wrap gap-10 items-center font-semibold font-secondary text-[#214586]">
+          {navItems.map(({ label, href }) => (
             <Link
               key={label}
-              href="#"
+              href={href}
               className="hover:text-[#6EA1D6] transition"
             >
               {label}
@@ -43,7 +51,7 @@ export default function Header() {
         </nav>
 
         {/* Login Button */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <Link
             href="#"
             className="bg-[#214586] hover:bg-[#6EA1D6] text-white px-5 py-2 rounded-full text-sm font-semibold transition"
@@ -54,7 +62,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-[#214586] focus:outline-none"
+          className="lg:hidden text-[#214586] focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <svg
@@ -80,13 +88,14 @@ export default function Header() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="md:hidden mt-4 px-4 flex flex-col gap-4 font-semibold text-[#214586]"
+          className="lg:hidden mt-4 px-4 flex flex-col gap-4 font-semibold text-[#214586]"
         >
-          {["Home", "About Us", "Our Curriculum", "Enrol Now"].map((label) => (
+          {navItems.map(({ label, href }) => (
             <Link
               key={label}
-              href="#"
+              href={href}
               className="hover:text-[#6EA1D6] transition"
+              onClick={() => setMenuOpen(false)} // close on click
             >
               {label}
             </Link>

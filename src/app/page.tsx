@@ -49,7 +49,7 @@ export default function HeroSection() {
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
         <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-none px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] md:gap-[210px] py-10">
+          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -57,7 +57,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="max-w-xl order-2 md:order-1 text-center md:text-left"
             >
-              <h1 className="text-2xl md:text-4xl font-semibold font-primary text-[#214586] mb-4 leading-14">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold font-primary text-[#214586] mb-4 leading-14">
                 Awakening the Light Within - Through Integral Education
               </h1>
               <p className="text-[#214586] mb-6 md:text-[22px] text-[18px]">
@@ -86,7 +86,7 @@ export default function HeroSection() {
                 alt="Happy Student"
                 width={480}
                 height={600}
-                className="w-full md:h-[600px] h-[500px] max-w-xl mx-auto relative top-10 md:top-5"
+                className="w-full md:h-[600px] h-[500px] max-w-4xl mx-auto relative top-10 md:top-5"
               />
             </motion.div>
           </div>
@@ -122,7 +122,10 @@ export default function HeroSection() {
       {/* Feature End */}
 
       {/* About Us */}
-      <section className="w-full py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#FAFAFA] overflow-hidden">
+      <section
+        id="about"
+        className="w-full py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#FAFAFA] overflow-hidden"
+      >
         <div className="max-w-[1440px] mx-auto text-center">
           <h2 className="text-[#EE842C] font-bold text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight font-primary">
             About Us
@@ -354,7 +357,7 @@ export default function HeroSection() {
       {/* Integaral education end */}
 
       {/* Curriculum */}
-      <section className="w-full py-20 px-4 bg-white">
+      <section id="curriculum" className="w-full py-20 px-4 bg-white">
         <div className="max-w-[1440px] mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#EE842C]">
             Our Curriculum
@@ -384,7 +387,7 @@ export default function HeroSection() {
       </section>
       {/* curriculum end */}
 
-      <CurriculumBundles/>
+      <CurriculumBundles />
 
       {/* Domain */}
       <section className="w-full py-20 px-4 bg-white text-center">

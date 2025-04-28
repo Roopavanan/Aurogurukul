@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <hr className="my-8 mx-auto border-white/30 w-[1440px] " />
+      <hr className="my-8 mx-auto border-white/30 w-[300px] md:w-[600px] lg:w-[1440px] " />
 
         <p className="text-center text-sm text-white/70">
           © {currentYear} AuroGurukul. All rights reserved.

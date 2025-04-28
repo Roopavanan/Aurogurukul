@@ -3,6 +3,8 @@ import { Merriweather, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 const merriweather = Merriweather({
   variable: "--font-primary",
@@ -74,6 +76,7 @@ export default function RootLayout({
       <body className={`${merriweather.variable} ${lato.variable} antialiased`}>
         <Header />
         {children}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
