@@ -27,7 +27,7 @@ export default function Footer() {
         {/* Center: Menu */}
         <div className="flex flex-col items-center gap-4">
           <div className="flex flex-row gap-8 text-center font-semibold">
-            <Link href="#" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
             </Link>
             <Link href="#" className="hover:underline">

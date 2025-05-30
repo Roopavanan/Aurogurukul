@@ -2,29 +2,84 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
+import Link from "next/link";
 import {
   BookText,
   Video,
   FlaskConical,
   FileText,
-  BarChart,
+  BarChart
 } from "lucide-react";
-import EnrollModal from "@/components/EnrollModal";
 import { useState } from "react";
-import CurriculumBundles from "@/components/CurriculumBundles";
+import PopularCourses from "@/components/PopularCourses";
+import ExploreOfferings from "@/components/ExploreOfferings";
+import ExploreCoursesSection from "@/components/ExploreCourses";
+import ImpactStories from "@/components/ImpactStories";
 
 const formats = [
   { icon: <BookText className="w-8 h-8 text-orange-400" />, label: "Text" },
   { icon: <Video className="w-8 h-8 text-orange-400" />, label: "Videos" },
   {
     icon: <FlaskConical className="w-8 h-8 text-orange-400" />,
-    label: "Experiments",
+    label: "Experiments"
   },
   { icon: <FileText className="w-8 h-8 text-orange-400" />, label: "Tests" },
   {
     icon: <BarChart className="w-8 h-8 text-orange-400" />,
-    label: "AI-based Test Reports",
+    label: "AI-based Test Reports"
+  }
+];
+
+const blobVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: i * 0.2,
+      type: "spring",
+      stiffness: 200,
+      damping: 20
+    }
+  })
+};
+
+const stats = [
+  {
+    label: "Exam Categories",
+    value: "30+",
+    textColor: "#B94726",
+    blobSrc: "/blob/red.svg",
+    style: "top-[-50px] left-[20%] w-[200px] h-[150px]"
   },
+  {
+    label: "Video Lessons",
+    value: "3.1k+",
+    textColor: "#337A91",
+    blobSrc: "/blob/blue.svg",
+    style: "top-[-50px] right-[100px] w-[200px] h-[150px]"
+  },
+  {
+    label: "Daily Live Classes",
+    value: "13k+",
+    textColor: "#258A51",
+    blobSrc: "/blob/green.svg",
+    style: "top-[30%] left-[50px] w-[200px] h-[150px]"
+  },
+  {
+    label: "Educators",
+    value: "55+",
+    textColor: "#D7A219",
+    blobSrc: "/blob/yellow.svg",
+    style: "top-[30%] right-[70%] w-[200px] h-[150px]"
+  },
+  {
+    label: "Offline Campuses",
+    value: "1.3k+",
+    textColor: "#2F94C9",
+    blobSrc: "/blob/lightblue.svg",
+    style: "bottom-[-10%] right-[80px] w-[200px] h-[150px]"
+  }
 ];
 
 const features = [
@@ -35,10 +90,10 @@ const features = [
         <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
       </div>
     ),
-    label: "Lifetime access",
+    label: "Lifetime access"
   },
   { icon: "/images/icons/active.svg", label: "Active learning" },
-  { icon: "/images/icons/course.svg", label: "10x courses" },
+  { icon: "/images/icons/course.svg", label: "10x courses" }
 ];
 
 export default function HeroSection() {
@@ -48,7 +103,7 @@ export default function HeroSection() {
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
-        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-none px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-[80px] px-4 sm:px-6 lg:px-8">
           <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
@@ -121,319 +176,149 @@ export default function HeroSection() {
       </section>
       {/* Feature End */}
 
+      {/* popular course section */}
+      <PopularCourses />
+
       {/* About Us */}
-      <section
-        id="about"
-        className="w-full py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#FAFAFA] overflow-hidden"
-      >
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[#EE842C] font-bold text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight font-primary">
-            About Us
-          </h2>
-          <h3 className="text-[#214586] font-semibold text-lg sm:text-xl md:text-2xl mb-8 leading-snug font-primary">
-            AUROGURUKUL – A Progressive and Futuristic Learning Platform
-          </h3>
-          <div className="space-y-6 text-[#214586] text-sm sm:text-base md:text-lg leading-[35px] font-secondary">
-            <p>
-              AuroGurukul is a global educational initiative inspired by the
-              timeless ideals of The Mother and Sri Aurobindo. Founded by a
-              group of educationists, researchers, and entrepreneurs—many of
-              whom have studied or taught at the Sri Aurobindo International
-              Centre of Education (SAICE)—AuroGurukul aspires to offer the world
-              a living model of Integral Education.
-            </p>
-            <p>
-              Our mission is to foster the development of every learner across
-              the four key dimensions of being—Physical, Vital (emotional),
-              Mental, and Spiritual—through a carefully designed, dynamic
-              curriculum that blends academic excellence with personal growth.
-            </p>
-            <p>
-              At AuroGurukul, we believe that education should awaken the full
-              potential of the individual. By progressing across all
-              domains—Science, Mathematics, Logic, Language, Arts, Sports, and
-              Values—students not only achieve academic mastery but also
-              cultivate self-awareness, inner strength, and a lifelong love for
-              learning.
-            </p>
-            <p>
-              We don’t just prepare students for exams—we prepare them for life.
-              AuroGurukul nurtures champions who are conscious, competent, and
-              compassionate, ready to lead and serve a world in transition.
-            </p>
-          </div>
-        </div>
+      <section className="bg-[#FFF9EF] py-28 px-6 md:px-16 text-center">
+        <motion.h2
+          className="text-3xl md:text-4xl font-primary font-semibold text-[#EE842C] mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Why Aurogurukul?
+        </motion.h2>
+
+        <motion.h3
+          className="text-xl md:text-2xl font-primary font-semibold text-gray-900 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          A Progressive and Futuristic Learning Platform
+        </motion.h3>
+
+        <motion.p
+          className="max-w-6xl mx-auto text-gray-800 leading-relaxed text-base md:text-lg font-secondary"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          AuroGurukul is a transformative learning space inspired by the
+          philosophy of Sri Aurobindo and The Mother. We nurture future-ready
+          individuals by integrating academic excellence with inner development,
+          creativity, and real-world skills.
+        </motion.p>
       </section>
       {/* About end */}
 
-      {/* mission & vision */}
-      <section className="w-full overflow-hidden bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-[670px] md:h-[370px]">
-          {/* Vision Box */}
-          <div className="bg-[#214586] text-white px-6 sm:px-10 flex items-center justify-center text-center">
-            <div className="max-w-lg">
-              <h3 className="text-[34px] font-bold font-primary mb-8 flex items-center justify-center gap-2">
-                <span className="w-6 h-6 bg-yellow-400 rounded-full"></span>{" "}
-                Vision
-              </h3>
-              <p className="text-sm sm:text-base leading-[35px] font-regular font-secondary">
-                To ignite a lifelong love for learning through a holistic,
-                value-based education system that nurtures all dimensions of a
-                child’s being— intellectual, physical, emotional, and spiritual.
-              </p>
-            </div>
-          </div>
-
-          {/* Mission Box */}
-          <div className="bg-white text-[#214586] px-6 sm:px-10 flex items-center justify-center text-center">
-            <div className="max-w-lg">
-              <h3 className="text-[34px] font-bold font-primary mb-8 flex items-center justify-center gap-4">
-                <span className="w-6 h-6 bg-yellow-400 rounded-full"></span>{" "}
-                Mission
-              </h3>
-              <p className="text-sm sm:text-base leading-[35px] font-regular font-secondary">
-                To implement the ideals of integral education by designing
-                engaging curricula and offering personalized learning
-                experiences in academics, sports, arts, music, and life skills.
-                We empower students to grow into conscious, compassionate, and
-                competent individuals ready to meet the challenges of life.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* mission & vision end */}
+      {/* explore offers */}
+      <ExploreOfferings />
+      {/* explore offers end */}
 
       {/* Integral education */}
-      <section className="w-full py-20 px-4 bg-[#F9F9F9] overflow-hidden">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#EE842C]">
-              Integral Education: A New Paradigm of Learning
+      <section className="relative bg-[#FFF2EC] py-16 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 ">
+          {/* Left Section */}
+          <div className="max-w-md z-10 text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#EE842C] font-primary mb-4">
+              Start learning with Aurogurukul
             </h2>
+            <p className="text-gray-700 font-secondary mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              sit amet nisl tempus, ultrices mi in, finibus ligula.
+            </p>
+            <button className="bg-[#EE842C] text-white px-6 py-3 rounded-md font-semibold text-sm">
+              Enrol Now
+            </button>
           </div>
 
-          <div className=" grid grid-cols-1 md:grid-cols-2 gap-[69px] items-center py-10">
-            {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-md max-w-4xl mx-auto">
-              <Image
-                src="/images/book.jpg"
-                alt="Lightbulb on book"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
+          {/* Right Section */}
+          <div className="relative w-[600px] h-[500px] left-50 flex items-center justify-center">
+            {/* Background blob */}
+            <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#FFEAE1] rounded-full blur-3xl opacity-40 -z-10" />
+
+            {/* Stat blob */}
+            <div className="relative w-full h-[400px]">
+              {stats.map((item, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                  variants={blobVariants}
+                  className={`absolute ${item.style} flex justify-center items-center`}
+                >
+                  <Image
+                    src={item.blobSrc}
+                    alt="blob"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                  <div
+                    className="absolute text-center flex flex-col justify-center items-center w-full h-full"
+                    style={{ color: item.textColor }}
+                  >
+                    <p className="text-xs">{item.label}</p>
+                    <p className="text-xl font-bold">
+                      {item.value.replace("+", "")}
+                      <span className="text-sm">+</span>
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Text */}
-            <div className="text-[#214586] max-w-6xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-semibold font-primary text-center md:text-start mb-4">
-                What is Integral Education?
-              </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-[35px] text-center md:text-start">
-                Integral Education is a transformative approach to learning that
-                goes beyond conventional academics. It seeks the harmonious
-                development of all parts of the being—body, mind, vital
-                (emotional), and soul. It is inspired by the teachings of Sri
-                Aurobindo and The Mother, where education is not merely for
-                livelihood but for life itself.
-              </p>
-            </div>
+            {/* Student Image */}
+            <Image
+              src="/images/boy.png"
+              alt="Student"
+              width={600}
+              height={600}
+              className="relative top-15  z-20 object-cover"
+            />
           </div>
         </div>
       </section>
       {/* Integral education end */}
 
       {/* Relevant today */}
-      <section className="w-full py-20 px-4 md:px-6 lg:px-8 bg-[#214586]">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Text */}
-          <div className="text-white max-w-xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 text-center md:text-start">
-              Why is it Relevant Today?
-            </h3>
-            <p className="text-base md:text-lg leading-[35px] font-secondary font-regular text-center md:text-start">
-              In an age of information overload and academic pressure,
-              traditional systems often overlook emotional well-being,
-              creativity, and moral grounding. Integral Education addresses this
-              gap, preparing learners not just to succeed in exams but to thrive
-              in life.
-            </p>
-          </div>
-
-          {/* Image */}
-          <div className="rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto">
-            <Image
-              src="/images/bulb.jpg"
-              alt="Lightbulb education concept"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <ExploreCoursesSection />
       {/* relevant today end */}
 
-      {/* mainstream */}
-      <section className="w-full py-20 px-4 bg-[#F9F9F9] overflow-hidden">
-        <div className="max-w-[1440px] mx-auto">
-          <div className=" grid grid-cols-1 md:grid-cols-2 gap-[69px] items-center py-10">
-            {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-md max-w-4xl mx-auto">
-              <Image
-                src="/images/education.jpg"
-                alt="Lightbulb on book"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-            </div>
+      {/* Call to action */}
+      <section className="bg-[#FAF8F5] py-24 px-6 md:px-0 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#EE842C] font-primary mb-4">
+            Ready to begin your learning journey?
+          </h2>
 
-            {/* Text */}
-            <div className="text-[#214586] max-w-6xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-semibold font-primary mb-4 text-center md:text-start">
-                How Does It Add Value to Mainstream Curriculums?
-              </h3>
-              <p className="text-base md:text-lg font-secondary font-regular leading-[35px] text-center md:text-start">
-                Integral Education can be beautifully woven into existing
-                frameworks like CBSE, ICSE, IB, CAIE, GCSE, and more. It
-                enhances the curriculum by adding depth, meaning, and real-world
-                relevance.
-              </p>
-            </div>
+          <p className="text-gray-700 font-secondary text-md mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            sit amet nisl tempus, ultrices mi in, finibus ligula.
+          </p>
+
+          <div className="flex justify-center gap-8 flex-wrap">
+            <Link
+              href="/enrol"
+              className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-3 rounded-[8px] text-sm font-semibold"
+            >
+              Enrol Now
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-[#EE842C] text-[#EE842C] hover:bg-[#FFF4EC] px-8 py-3 rounded-[8px] text-sm font-semibold"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
-      {/* mainstream end */}
+      {/* Call to action end */}
 
-      {/* Integral Education  */}
-      <section className="w-full py-20 px-4 bg-[#214586] text-white">
-        <div className="max-w-[1640px] mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#FBBF5D]">
-            Integral Education: A New Paradigm of Learning
-          </h2>
-        </div>
-
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20">
-          {[
-            {
-              title: "Science & Math",
-              desc: "Promotes logical reasoning, inquiry, and hands-on experimentation. Builds a strong foundation for STEM pathways while nurturing curiosity and problem-solving.",
-            },
-            {
-              title: "Art & Music",
-              desc: "Develops creativity, self-expression, and emotional intelligence. Art and music are not just co-curricular—they're integral to developing a balanced personality.",
-            },
-            {
-              title: "Sports & Physical Education",
-              desc: "Fosters discipline, team spirit, physical fitness, and resilience. Sports are essential for building a healthy body and character.",
-            },
-            {
-              title: "Life Skills & Values",
-              desc: "Nurtures empathy, decision-making, communication, and mindfulness. Our life skills modules help learners become confident and conscious global citizens.",
-            },
-            {
-              title: "Skill Development & Creativity Labs",
-              desc: "Hands-on, project-based modules in Robotics, Chess, Design Thinking, Coding, and Entrepreneurship prepare students for future careers and real-world problem solving.",
-            },
-            {
-              title: "Academic Mastery",
-              desc: "Structured, examination-ready academic modules for Grade 9–12, entrance tests (JEE, NEET, CLAT, etc.), and global benchmarks (SAT, TOEFL, GRE) with interactive lessons, test analysis, and AI-powered performance reports.",
-            },
-          ].map((item, index) => (
-            <div key={index} className="pt-4">
-              <div className="w-35 border-t-2 border-white mb-2"></div>
-              <h3 className="font-bold text-[18px] font-secondary text-[#FBBF5D] mb-2">
-                {item.title}:
-              </h3>
-              <p className="text-white text-[18px] font-secondary leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* Integaral education end */}
-
-      {/* Curriculum */}
-      <section id="curriculum" className="w-full py-20 px-4 bg-white">
-        <div className="max-w-[1440px] mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold font-primary text-[#EE842C]">
-            Our Curriculum
-          </h2>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {[
-            "Pre-School",
-            "Grade 1–3",
-            "Grade 4–8",
-            "Grade 9–12",
-            "Graduate & Postgraduate",
-            "Skill Development",
-            "Art & Music",
-            "Sports",
-            "Entrance & Competitive Exams",
-          ].map((label, index) => (
-            <div
-              key={index}
-              className="bg-[#B7D3F7] border border-[#214586] text-[#214586] font-semibold text-[20px] py-6 px-6 rounded-[25px] text-center hover:shadow-md transition duration-300"
-            >
-              {label}
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* curriculum end */}
-
-      <CurriculumBundles />
-
-      {/* Domain */}
-      <section className="w-full py-20 px-4 bg-white text-center">
-        <h3 className="text-[#214586] font-semibold text-2xl font-primary mb-6">
-          Each domain is carefully crafted with content formats like:
-        </h3>
-        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center items-start md:items-center gap-10 md:gap-14 py-10 px-4 md:px-10 mb-16">
-          {formats.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 text-[#214586] text-base md:text-lg font-bold font-primary max-w-full"
-            >
-              <div className="w-12 h-12 m rounded-full border border-orange-500 bg-orange-100 flex items-center justify-center shrink-0">
-                {item.icon}
-              </div>
-              <span className="whitespace-normal break-words">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-[#8DB3DB] max-w-7xl mx-auto py-12 px-6 ">
-          <h4 className="text-[#214586] font-bold font-primary text-xl md:text-2xl mb-2">
-            Join Us in Shaping the Future of Learning
-          </h4>
-          <p className="text-[#214586] text-[20px] font-bold font-secondary mb-1">
-            Admissions Open for 2025
-          </p>
-          <p className="text-[#214586] mb-6 text-[20px] font-semibold font-secondary">
-            Online | Offline | Hybrid Options Available
-          </p>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg"
-          >
-            Enroll Now
-          </button>
-
-          <EnrollModal
-            isOpen={isModalOpen}
-            onClose={() => setModalOpen(false)}
-          />
-        </div>
-      </section>
-      {/* Domain end */}
+      <ImpactStories />
     </main>
   );
 }
