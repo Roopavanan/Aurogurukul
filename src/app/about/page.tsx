@@ -62,7 +62,7 @@ export default function HeroSection() {
                 alt="Happy Student"
                 width={480}
                 height={600}
-                className="w-full md:h-[600px] h-[500px] max-w-4xl mx-auto relative top-10 md:top-5"
+                className="w-full md:h-[600px] h-[500px] max-w-8xl mx-auto relative top-10 md:top-5"
               />
             </motion.div>
           </div>

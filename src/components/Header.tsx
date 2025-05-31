@@ -24,9 +24,9 @@ export default function Header() {
   ];
 
   const courseDropdown = [
-    { label: "Pre School", href: "/courses/pre-school" },
-    { label: "Grade 1 - 3", href: "/courses/grade-1-3" },
-    { label: "Grade 4 - 8", href: "/courses/grade-4-8" },
+    // { label: "Pre School", href: "/courses/pre-school" },
+    // { label: "Grade 1 - 3", href: "/courses/grade-1-3" },
+    // { label: "Grade 4 - 8", href: "/courses/grade-4-8" },
     {
       label: "Grade 9 - 12",
       submenu: [
@@ -39,10 +39,10 @@ export default function Header() {
         { label: "Unschooling", href: "/courses/grade-9-12/unschooled" }
       ]
     },
-    { label: "Graduate & Post Graduate", href: "/courses/graduate" },
-    { label: "Art & Music", href: "/courses/art-music" },
-    { label: "Sports", href: "/courses/sports" },
-    { label: "Entrance & Competitive Exams", href: "/courses/exams" }
+    // { label: "Graduate & Post Graduate", href: "/courses/graduate" },
+    // { label: "Art & Music", href: "/courses/art-music" },
+    // { label: "Sports", href: "/courses/sports" },
+    // { label: "Entrance & Competitive Exams", href: "/courses/exams" }
   ];
 
   useEffect(() => {
@@ -140,7 +140,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-0 left-full translate-y-[-50%] mt-0 ml-1 w-56 bg-white shadow-lg rounded-md py-2 hidden group-hover:block z-50"
+                        className="absolute top-0 left-full translate-y-[-20%] mt-0 ml-1 w-56 bg-white shadow-lg rounded-md py-2 hidden group-hover:block z-50"
                       >
                         {submenu.map((sub) => (
                           <Link
@@ -174,10 +174,10 @@ export default function Header() {
         {/* Login Button */}
         <div className="hidden lg:flex">
           <Link
-            href="#"
+            href="https://learn.aurogurukul.site/login"
             className="bg-[#214586] hover:bg-[#6EA1D6] text-white px-5 py-2 rounded-lg text-sm font-semibold transition"
           >
-            Login / Sign IN
+            Login / Sign In
           </Link>
         </div>
 
