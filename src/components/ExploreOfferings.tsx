@@ -1,4 +1,3 @@
-// components/ExploreOfferings.tsx
 "use client";
 
 import { FC } from "react";
@@ -22,7 +21,7 @@ const ExploreOfferings: FC = () => {
 
       <div className="relative z-0 w-full">
         {/* Full-width SVG lines (positioned absolutely inside this block) */}
-        <div className="absolute top-0 inset-0 pointer-events-none z-0">
+        <div className="absolute top-10 inset-0 pointer-events-none z-0 w-550">
           <Image
             src="/icons/violet-line.svg"
             alt="Line 1"

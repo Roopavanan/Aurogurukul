@@ -50,35 +50,35 @@ const stats = [
     value: "30+",
     textColor: "#B94726",
     blobSrc: "/blob/red.svg",
-    style: "top-[-50px] left-[20%] w-[200px] h-[150px]"
+    style: "top-[-60px] left-[50%] md:top-[-50px] md:left-[20%] w-[130px] h-[200px] md:w-[200px] md:h-[150px] "
   },
   {
     label: "Video Lessons",
     value: "3.1k+",
     textColor: "#337A91",
     blobSrc: "/blob/blue.svg",
-    style: "top-[-50px] right-[100px] w-[200px] h-[150px]"
+    style: "top-[-70px] right-[120px]  md:top-[-50px] md:right-[200%] w-[130px] h-[120px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Daily Live Classes",
     value: "13k+",
     textColor: "#258A51",
     blobSrc: "/blob/green.svg",
-    style: "top-[30%] left-[50px] w-[200px] h-[150px]"
+    style: "top-[30%] left-[10px] md:top-[120px] md:left-[20%] w-[130px] h-[150px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Educators",
     value: "55+",
     textColor: "#D7A219",
     blobSrc: "/blob/yellow.svg",
-    style: "top-[30%] right-[70%] w-[200px] h-[150px]"
+    style: "top-[8%] right-[70%]  md:top-[120px] md:right-[150%] w-[130px] h-[140px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Offline Campuses",
     value: "1.3k+",
     textColor: "#2F94C9",
     blobSrc: "/blob/lightblue.svg",
-    style: "bottom-[-10%] right-[80px] w-[200px] h-[150px]"
+    style: "bottom-[10%] right-[120px] md:bottom-[-20%] md:right-[120%] lg:bottom-[-10%] lg:right-[-100%] w-[120px] h-[120px] md:w-[200px] md:h-[150px]"
   }
 ];
 
@@ -103,7 +103,7 @@ export default function HeroSection() {
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
-        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-[80px] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
           <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
@@ -151,7 +151,7 @@ export default function HeroSection() {
 
       {/* Features */}
       <section className="w-full py-16 px-4 bg-white overflow-hidden">
-        <div className="max-w-[1640px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-[#214586] text-center">
+        <div className="max-w-[1640px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-[#000] text-center">
           {features.map((item, i) => (
             <div
               key={i}
@@ -237,7 +237,7 @@ export default function HeroSection() {
           {/* Right Section */}
           <div className="relative w-[600px] h-[500px] left-50 flex items-center justify-center">
             {/* Background blob */}
-            <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#FFEAE1] rounded-full blur-3xl opacity-40 -z-10" />
+            <div className="absolute top-10 right-10 w-[300px] h-[200px] bg-[#FFEAE1] rounded-full blur-3xl opacity-40 -z-10" />
 
             {/* Stat blob */}
             <div className="relative w-full h-[400px]">
@@ -261,10 +261,10 @@ export default function HeroSection() {
                     className="absolute text-center flex flex-col justify-center items-center w-full h-full"
                     style={{ color: item.textColor }}
                   >
-                    <p className="text-xs">{item.label}</p>
-                    <p className="text-xl font-bold">
+                    <p className="text-[12px] md:text-[16px] font-secondary">{item.label}</p>
+                    <p className="text-[32px] md:text-[50px] font-bold  font-secondary">
                       {item.value.replace("+", "")}
-                      <span className="text-sm">+</span>
+                      <span className="text-xl">+</span>
                     </p>
                   </div>
                 </motion.div>
@@ -277,7 +277,7 @@ export default function HeroSection() {
               alt="Student"
               width={600}
               height={600}
-              className="relative top-15  z-20 object-cover"
+              className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[600px] lg:h-[600px] relative top-28 md:top-15 md:right-30 lg:right-0 right-70 z-20 object-cover"
             />
           </div>
         </div>

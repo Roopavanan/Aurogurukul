@@ -167,14 +167,9 @@ export default function ExploreCourses() {
           src="/icons/red-line.svg"
           alt="Decorative line background"
           fill
-          className="object-cover object-center "
+          className="object-cover object-center opacity-50 "
         />
-        <Image
-          src="/icons/blue-line.svg"
-          alt="Decorative line background"
-          fill
-          className="object-cover object-center "
-        />
+    
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -230,7 +225,7 @@ export default function ExploreCourses() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="white"
-                      strokeWidth="2"
+                      strokeWidth="1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >

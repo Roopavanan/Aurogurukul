@@ -1,4 +1,3 @@
-// components/PopularCourses.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -12,6 +11,7 @@ type Course = {
   icon: string;
   arrowIcon: string;
   bgColor: string;
+  textColor: string;
 };
 
 const courses: Course[] = [
@@ -21,6 +21,7 @@ const courses: Course[] = [
     icon: '/icons/book.svg',
     arrowIcon: '/icons/org.svg',
     bgColor: 'bg-[#FEE4DC]',
+    textColor: "#AD4027"
   },
   {
     title: 'JEE Courses',
@@ -28,6 +29,7 @@ const courses: Course[] = [
     icon: '/icons/engineer.svg',
     arrowIcon: '/icons/violet.svg',
     bgColor: 'bg-[#EEE5FF]',
+    textColor: "#8363A9"
   },
   {
     title: 'NEET Foundation',
@@ -35,6 +37,7 @@ const courses: Course[] = [
     icon: '/icons/campus.svg',
     arrowIcon: '/icons/green.svg',
     bgColor: 'bg-[#E3F7E9]',
+    textColor:"#669E6E"
   },
   {
     title: 'Olympiad',
@@ -42,6 +45,7 @@ const courses: Course[] = [
     icon: '/icons/books.svg',
     arrowIcon: '/icons/blue.svg',
     bgColor: 'bg-[#DFF2F8]',
+    textColor: "#357E8E"
   },
 ];
 
@@ -87,7 +91,9 @@ const PopularCourses: FC = () => {
                     <Image src={course.icon} alt={course.title} width={60} height={60} />
                     <Image src={course.arrowIcon} alt="arrow" width={20} height={20} />
                   </div>
-                  <p className="text-lg font-medium font-primary text-left">{course.title}</p>
+                  <p className="text-lg font-medium font-primary text-left" 
+                  style={{ color: course.textColor }}
+                  >{course.title}</p>
                 </div>
               </Link>
             </motion.div>
