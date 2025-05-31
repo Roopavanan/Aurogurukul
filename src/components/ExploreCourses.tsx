@@ -5,6 +5,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { IoIosArrowForward } from 'react-icons/io';
+
 
 type SubjectTag = {
   name: string;
@@ -159,7 +161,7 @@ export default function ExploreCourses() {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 px-4 md:px-6 lg:px-8 relative overflow-hidden"
+      className="w-full py-28 px-4 md:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background SVG Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -167,7 +169,7 @@ export default function ExploreCourses() {
           src="/icons/red-line.svg"
           alt="Decorative line background"
           fill
-          className="object-cover object-center opacity-50 "
+          className="object-fill object-center opacity-50 "
         />
     
       </div>
@@ -214,24 +216,13 @@ export default function ExploreCourses() {
                   >
                     {category.title}
                   </h3>
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center "
-                    style={{ backgroundColor: category.arrowBgColor }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="white"
-                      strokeWidth="1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M13 17l5-5-5-5M6 17l5-5-5-5" />
-                    </svg>
-                  </div>
+                 <div
+  className="w-8 h-8 rounded-full flex items-center justify-center"
+  style={{ backgroundColor: category.arrowBgColor }}
+>
+  <IoIosArrowForward className="text-white text-lg" />
+</div>
+
                 </div>
                 <p className="text-gray-600 mb-6 text-sm font-secondary">
                   {category.description}
@@ -257,14 +248,14 @@ export default function ExploreCourses() {
         </motion.div>
 
         <motion.div
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-12 "
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={buttonVariants}
         >
           <Link
             href="/courses"
-            className="bg-[#F97316] hover:bg-[#e67e22] text-white font-medium px-8 py-3 rounded-full transition-all duration-300"
+            className="bg-[#EE842C] hover:bg-[#e67e22] text-white text-[16px] font-medium px-8 py-2 rounded-[8px] transition-all duration-300"
           >
             Explore All Courses
           </Link>

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "AuroGurukul",
   ],
   icons: {
-    icon: "/images/favicon.ico",
+    icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
   authors: [{ name: "AuroGurukul Team", url: "https://aurogurukul.com" }],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "AuroGurukul",
     images: [
       {
-        url: "https://aurogurukul.com/og-image.jpg",
+        url: "https://aurogurukul.com/images/logo.png",
         width: 1200,
         height: 630,
         alt: "AuroGurukul – Integral Education",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "AuroGurukul | Integral Education for a New Era",
     description:
       "Discover a new paradigm of education inspired by Sri Aurobindo and The Mother.",
-    images: ["https://aurogurukul.com/og-image.jpg"],
+    images: ["https://aurogurukul.com/images/logo.png"],
     creator: "@aurogurukul", // replace if you have a Twitter handle
   },
   metadataBase: new URL("https://aurogurukul.org"),

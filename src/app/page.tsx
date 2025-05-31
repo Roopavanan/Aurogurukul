@@ -101,9 +101,9 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                
-                className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg w-[180px]"
+                className="bg-[#EE842C] text-white px-6 py-3 rounded-[8px] font-semibold text-[16px] w-[208px]"
               >
-                Enrol Now
+                Join our Community
               </motion.button>
             </motion.div>
 
@@ -119,7 +119,7 @@ export default function HeroSection() {
                 alt="Happy Student"
                 width={480}
                 height={600}
-                className="w-full md:h-[600px] h-[500px] max-w-4xl mx-auto relative top-10 md:top-5"
+                className="w-full md:h-[600px] h-[400px] max-w-4xl mx-auto relative top-10 md:top-5"
               />
             </motion.div>
           </div>
@@ -207,7 +207,7 @@ export default function HeroSection() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
               sit amet nisl tempus, ultrices mi in, finibus ligula.
             </p>
-            <button className="bg-[#EE842C] text-white px-6 py-3 rounded-md font-semibold text-sm">
+            <button className="bg-[#EE842C] text-white px-6  rounded-md font-semibold text-[16px] w-[135px] h-[35px]">
               Enrol Now
             </button>
           </div>
@@ -281,13 +281,13 @@ export default function HeroSection() {
           <div className="flex justify-center gap-8 flex-wrap">
             <Link
               href="/enrol"
-              className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-3 rounded-[8px] text-sm font-semibold"
+              className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-2 rounded-[8px] text-[16px]  font-semibold"
             >
               Enrol Now
             </Link>
             <Link
               href="/contact"
-              className="border border-[#EE842C] text-[#EE842C] hover:bg-[#FFF4EC] px-8 py-3 rounded-[8px] text-sm font-semibold"
+              className="border border-[#EE842C] text-[#EE842C] hover:bg-[#FFF4EC] px-8 py-2 rounded-[8px] text-[16px] font-semibold"
             >
               Contact Us
             </Link>

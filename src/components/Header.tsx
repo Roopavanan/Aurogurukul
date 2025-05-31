@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,8 @@ export default function Header() {
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
 
   const navItems = [
     { label: "Activities", href: "/activities" },
@@ -107,8 +110,8 @@ export default function Header() {
               timeoutRef.current = setTimeout(() => setCoursesOpen(false), 200);
             }}
           >
-            <button className="hover:text-[#6EA1D6] transition">
-              Courses{" "}
+            <button className="hover:text-[#6EA1D6] transition flex items-center gap-1">
+              Courses <IoIosArrowDown className="mt-[2px]" />
             </button>
 
             {coursesOpen && (
@@ -118,7 +121,7 @@ export default function Header() {
               >
                 {courseDropdown.map(({ label, href, submenu }) => (
                   <div key={label} className="relative group">
-                    {href ? (
+                    {href && !submenu ? (
                       <Link
                         href={href}
                         className="block px-4 py-2 text-sm text-[#214586] hover:bg-gray-100"
@@ -126,11 +129,12 @@ export default function Header() {
                         {label}
                       </Link>
                     ) : (
-                      <span className="block px-4 py-2 text-sm text-[#214586] hover:bg-gray-100 cursor-pointer">
-                        {label}
+                      <span className=" px-4 py-2 text-sm text-[#214586] hover:bg-gray-100 cursor-pointer flex items-center justify-between">
+                        {label} <IoIosArrowDown className="ml-1" />
                       </span>
                     )}
 
+                    {/* Submenu */}
                     {submenu && (
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
@@ -207,35 +211,86 @@ export default function Header() {
           transition={{ duration: 0.2 }}
           className="lg:hidden mt-4 px-4 flex flex-col gap-4 font-semibold text-[#214586]"
         >
-          {/* Flattened Mobile Courses */}
-          <div className="flex flex-col gap-1">
-            <span className="font-bold">Courses</span>
-            {courseDropdown.map(({ label, href, submenu }) => (
-              <div key={label} className="pl-3">
-                {href && (
-                  <Link
-                    href={href}
-                    className="block text-sm hover:text-[#6EA1D6] transition"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {label}
-                  </Link>
-                )}
-                {submenu &&
-                  submenu.map((sub) => (
-                    <Link
-                      key={sub.label}
-                      href={sub.href}
-                      className="block pl-4 text-sm hover:text-[#6EA1D6] transition"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      ↳ {sub.label}
-                    </Link>
-                  ))}
-              </div>
-            ))}
-          </div>
+          {/* Courses Toggle */}
+          <button
+            onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+            className="flex items-center justify-between text-left text-sm w-full text-[#214586] hover:text-[#6EA1D6] transition font-bold"
+          >
+            Courses
+            <IoIosArrowDown
+              className={`transform transition-transform ${
+                mobileCoursesOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
 
+          {/* Animated Courses Submenu */}
+          <AnimatePresence>
+            {mobileCoursesOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden flex flex-col gap-1 pl-3"
+              >
+                {courseDropdown.map(({ label, href, submenu }) => (
+                  <div key={label} className="pl-1">
+                    {href && !submenu ? (
+                      <Link
+                        href={href}
+                        className="block text-sm hover:text-[#6EA1D6] transition"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() =>
+                            setOpenSubmenu(openSubmenu === label ? null : label)
+                          }
+                          className="flex items-center justify-between text-left text-sm w-full text-[#214586] hover:text-[#6EA1D6] transition"
+                        >
+                          {label}
+                          <IoIosArrowDown
+                            className={`transform transition-transform ${
+                              openSubmenu === label ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {submenu && openSubmenu === label && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="pl-4 overflow-hidden"
+                            >
+                              {submenu.map((sub) => (
+                                <Link
+                                  key={sub.label}
+                                  href={sub.href}
+                                  className="block text-sm hover:text-[#6EA1D6] transition"
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  ↳ {sub.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Other Nav Items */}
           {navItems.map(({ label, href }) => (
             <Link
               key={label}
@@ -247,6 +302,7 @@ export default function Header() {
             </Link>
           ))}
 
+          {/* Login Button */}
           <Link
             href="#"
             className="bg-[#214586] hover:bg-[#6EA1D6] text-white px-5 py-2 rounded-full text-sm font-semibold transition text-center"

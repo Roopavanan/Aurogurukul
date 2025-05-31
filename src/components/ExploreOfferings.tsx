@@ -21,20 +21,17 @@ const ExploreOfferings: FC = () => {
 
       <div className="relative z-0 w-full">
         {/* Full-width SVG lines (positioned absolutely inside this block) */}
-        <div className="absolute top-10 inset-0 pointer-events-none z-0 w-550">
-          <Image
-            src="/icons/violet-line.svg"
-            alt="Line 1"
-            fill
-            className="object-cover object-center"
-          />
-          <Image
-            src="/icons/yellow-line.svg"
-            alt="Line 2"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
+       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <Image
+                src="/icons/violet-line1.svg"
+                alt="Decorative line background"
+                fill
+                className="object-fill object-center opacity-50 "
+              />
+         
+          
+            </div>
+        
 
         {/* Layout with exact sizes */}
         <div className="relative z-10 max-w-[1100px] mx-auto flex flex-col lg:flex-row gap-4 items-center justify-center">

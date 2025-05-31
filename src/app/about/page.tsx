@@ -85,7 +85,7 @@ export default function HeroSection() {
             alt="Background Curve Line"
             width={1920}
             height={600}
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain opacity-50"
           />
         </div>
 
@@ -181,10 +181,10 @@ export default function HeroSection() {
         {/* SVG Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/icons/blue-line.svg" // Replace with your SVG file
+            src="/icons/blue-line.svg" 
             alt="Decorative background"
             fill
-            className="object-cover"
+            className="object-cover opacity-50"
           />
         </div>
 
@@ -265,7 +265,7 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[18px] sm:text-2xl">
+              <span className="font-bold font-primary text-[12px] sm:text-[18px]">
                 {item.label}
               </span>
             </div>
@@ -289,13 +289,13 @@ export default function HeroSection() {
           <div className="flex justify-center gap-8 flex-wrap">
             <Link
               href="/enrol"
-              className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-3 rounded-[8px] text-sm font-semibold"
+              className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-2 rounded-[8px] text-[16px]  font-semibold"
             >
               Enrol Now
             </Link>
             <Link
               href="/contact"
-              className="border border-[#EE842C] text-[#EE842C] hover:bg-[#FFF4EC] px-8 py-3 rounded-[8px] text-sm font-semibold"
+              className="border border-[#EE842C] text-[#EE842C] hover:bg-[#FFF4EC] px-8 py-2 rounded-[8px] text-[16px] font-semibold"
             >
               Contact Us
             </Link>
