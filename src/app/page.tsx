@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 import PopularCourses from "@/components/PopularCourses";
 import ExploreOfferings from "@/components/ExploreOfferings";
 import ExploreCoursesSection from "@/components/ExploreCourses";

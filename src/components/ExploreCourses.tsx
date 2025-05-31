@@ -179,10 +179,10 @@ export default function ExploreCourses() {
           animate={isInView ? "visible" : "hidden"}
           variants={titleVariants}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#F97316] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold font-primary text-[#F97316] mb-4">
             Explore Courses
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 max-w-3xl mx-auto font-secondary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             sit amet nisl tempus, ultrices mi in, finibus ligula.
           </p>
@@ -209,13 +209,13 @@ export default function ExploreCourses() {
               <Link href={`/courses/${category.id}`} className="block">
                 <div className="flex justify-between items-start mb-4">
                   <h3
-                    className="text-xl font-bold"
+                    className="text-xl font-bold font-primary"
                     style={{ color: category.textColor }}
                   >
                     {category.title}
                   </h3>
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center"
+                    className="w-8 h-8 rounded-full flex items-center justify-center "
                     style={{ backgroundColor: category.arrowBgColor }}
                   >
                     <svg
@@ -233,7 +233,7 @@ export default function ExploreCourses() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6 text-sm">
+                <p className="text-gray-600 mb-6 text-sm font-secondary">
                   {category.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

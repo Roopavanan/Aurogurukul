@@ -51,8 +51,8 @@ const ImpactStories = () => {
   return (
     <section className="bg-white py-20 px-4 md:px-16 overflow-hidden">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#EE842C] mb-4">Impact Stories</h2>
-        <p className="text-gray-600 text-lg">Hear what people think about us!</p>
+        <h2 className="text-4xl md:text-5xl font-bold font-primary text-[#EE842C] mb-4">Impact Stories</h2>
+        <p className="text-gray-600 text-lg font-secondary">Hear what people think about us!</p>
       </div>
 
       <div className="max-w-6xl mx-auto overflow-hidden">

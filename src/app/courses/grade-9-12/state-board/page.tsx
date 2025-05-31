@@ -1,22 +1,25 @@
-"use client";
+'use client';
+
 import { useState } from "react";
 import classNames from "classnames";
 import { IoIosArrowForward } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Define tab types
+const tabs = ["Online Courses", "Offline Courses", "Sports & Music"] as const;
+type TabType = typeof tabs[number];
 
-type courseData = {
+// Define course type
+type Course = {
   title: string;
-  href: string;
-  icon: string;
-  arrowIcon: string;
-  bgColor: string;
+  description: string;
+  bg: string;
+  iconColor: string;
   textColor: string;
 };
 
-const tabs = ["Online Courses", "Offline Courses", "Sports & Music"];
-
-const courseData = {
+// Define course data type
+const courseData: Record<TabType, Course[]> = {
   "Online Courses": [
     {
       title: "Social Science",
@@ -82,10 +85,10 @@ const courseData = {
 };
 
 export default function Class9Courses() {
-  const [activeTab, setActiveTab] = useState("Online Courses");
+  const [activeTab, setActiveTab] = useState<TabType>("Online Courses");
 
   return (
-    <div className="w-full  px-4 md:px-10 py-10 space-y-10">
+    <div className="w-full px-4 md:px-10 py-10 space-y-10">
       {/* Hero Section */}
       <section className="bg-[#FEEFEB] rounded-[40px] px-6 py-10 text-center max-w-7xl mx-auto">
         <h2 className="text-3xl font-semibold font-primary text-[#AD4027] mb-4">
@@ -102,7 +105,7 @@ export default function Class9Courses() {
       </section>
 
       {/* Tab Filter */}
-      <div className=" w-full max-w-7xl mx-auto flex justify-start gap-6 border-b border-gray-200">
+      <div className="w-full max-w-7xl mx-auto flex justify-start gap-6 border-b border-gray-200">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -120,63 +123,62 @@ export default function Class9Courses() {
       </div>
 
       {/* Cards Section */}
-     <AnimatePresence mode="wait">
-  <motion.div
-    key={activeTab}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.4 }}
-    className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-  >
-    {courseData[activeTab].map(
-      ({ title, description, bg, iconColor, textColor }) => (
+      <AnimatePresence mode="wait">
         <motion.div
-          key={title}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="relative rounded-xl p-6 flex flex-col justify-between text-sm"
-          style={{ backgroundColor: bg }}
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4 }}
+          className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {/* Arrow icon top-right */}
-          <div className="absolute top-4 right-4">
-            <div
-              className="w-6 h-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: iconColor }}
-            >
-              <IoIosArrowForward className="text-white text-xs" />
-            </div>
-          </div>
+          {courseData[activeTab].map(
+            ({ title, description, bg, iconColor, textColor }) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="relative rounded-xl p-6 flex flex-col justify-between text-sm"
+                style={{ backgroundColor: bg }}
+              >
+                {/* Arrow icon top-right */}
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: iconColor }}
+                  >
+                    <IoIosArrowForward className="text-white text-xs" />
+                  </div>
+                </div>
 
-          {/* Title */}
-          <h3
-            className="font-semibold font-primary text-base mb-2"
-            style={{ color: textColor }}
-          >
-            {title}
-          </h3>
+                {/* Title */}
+                <h3
+                  className="font-semibold font-primary text-base mb-2"
+                  style={{ color: textColor }}
+                >
+                  {title}
+                </h3>
 
-          {/* Description */}
-          <p
-            className="text-sm font-secondary leading-relaxed mb-6"
-            style={{ color: textColor }}
-          >
-            {description}
-          </p>
+                {/* Description */}
+                <p
+                  className="text-sm font-secondary leading-relaxed mb-6"
+                  style={{ color: textColor }}
+                >
+                  {description}
+                </p>
 
-          {/* Button */}
-          <div className="flex justify-center">
-            <button className="bg-[#EE842C] hover:bg-[#ee832cea] text-white text-xs px-4 py-1.5 rounded-md">
-              Add to cart →
-            </button>
-          </div>
+                {/* Button */}
+                <div className="flex justify-center">
+                  <button className="bg-[#EE842C] hover:bg-[#ee832cea] text-white text-xs px-4 py-1.5 rounded-md">
+                    Add to cart →
+                  </button>
+                </div>
+              </motion.div>
+            )
+          )}
         </motion.div>
-      )
-    )}
-  </motion.div>
-</AnimatePresence>
-
+      </AnimatePresence>
     </div>
   );
 }
