@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 import IntegralEducationSection from "@/components/IntegralEducationSection";
 
 const features = [
@@ -21,7 +20,6 @@ const features = [
 ];
 
 export default function HeroSection() {
-  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <main className="overflow-x-hidden">
@@ -46,7 +44,6 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setModalOpen(true)} // ← This line fixes it!
                 className="bg-[#EE842C] text-white px-10 py-3 rounded-lg font-semibold text-lg w-[280px]"
               >
                 Join Our Community

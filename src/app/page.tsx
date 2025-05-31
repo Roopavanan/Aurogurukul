@@ -3,32 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
 import Link from "next/link";
-import {
-  BookText,
-  Video,
-  FlaskConical,
-  FileText,
-  BarChart
-} from "lucide-react";
 import { useState } from "react";
 import PopularCourses from "@/components/PopularCourses";
 import ExploreOfferings from "@/components/ExploreOfferings";
 import ExploreCoursesSection from "@/components/ExploreCourses";
 import ImpactStories from "@/components/ImpactStories";
 
-const formats = [
-  { icon: <BookText className="w-8 h-8 text-orange-400" />, label: "Text" },
-  { icon: <Video className="w-8 h-8 text-orange-400" />, label: "Videos" },
-  {
-    icon: <FlaskConical className="w-8 h-8 text-orange-400" />,
-    label: "Experiments"
-  },
-  { icon: <FileText className="w-8 h-8 text-orange-400" />, label: "Tests" },
-  {
-    icon: <BarChart className="w-8 h-8 text-orange-400" />,
-    label: "AI-based Test Reports"
-  }
-];
 
 const blobVariants = {
   hidden: { opacity: 0, scale: 0.5 },
@@ -97,7 +77,6 @@ const features = [
 ];
 
 export default function HeroSection() {
-  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <main className="overflow-x-hidden">
@@ -122,7 +101,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setModalOpen(true)} // ← This line fixes it!
+               
                 className="bg-[#EE842C] text-white px-6 py-3 rounded-full font-semibold text-lg w-[180px]"
               >
                 Enrol Now
