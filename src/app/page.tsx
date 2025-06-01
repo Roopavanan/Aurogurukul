@@ -81,8 +81,8 @@ export default function HeroSection() {
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
-        <div className="max-w-[1700px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[1680px] mx-auto h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
+<div className="w-full max-w-[1400px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
+  <div className="w-full h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
