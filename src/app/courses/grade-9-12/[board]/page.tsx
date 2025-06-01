@@ -1,3 +1,5 @@
+'use client';
+
 import { useSearchParams } from 'next/navigation';
 import ClassCourse from '@/components/ClassCourse'; // Adjust path as needed
 import { FC } from 'react';
