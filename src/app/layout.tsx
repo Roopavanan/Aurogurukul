@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ChatWidget from "@/components/ChatWidget";
 
 
 
@@ -79,6 +80,7 @@ export default function RootLayout({
       <body className={`${merriweather.variable} ${lato.variable} antialiased`}>
         <Header />
         {children}
+        <ChatWidget/>
         <ScrollToTop />
         <Footer />
       </body>
