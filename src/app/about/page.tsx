@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
         <div className="max-w-[1400px] mx-auto bg-[#EDF7FA] rounded-[80px] px-4 sm:px-6 lg:px-8">
-          <div className=" h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[160px] py-10">
+          <div className=" h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[100px] py-10">
             {/* Left Side Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}

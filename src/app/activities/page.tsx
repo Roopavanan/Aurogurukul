@@ -128,9 +128,9 @@ export default function ActivitiesSection() {
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 pt-2">
             {[
-              "Studio ARt & Clay Modeling",
+              "Studio Art & Clay Modeling",
               "Indian & Western Music Workshops",
-              "Theatre, Storytelling 7 Movement Arts"
+              "Theatre, Storytelling & Movement Arts"
             ].map((item) => (
               <button
                 key={item}
