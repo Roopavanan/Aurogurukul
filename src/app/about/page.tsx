@@ -146,20 +146,20 @@ export default function HeroSection() {
           {/* Right - Vision and Mission Cards */}
           <div className="space-y-6">
             <div className="rounded-[30px] bg-blue-100 p-6 shadow border border-blue-200">
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+              <h3 className="text-[24px] font-semibold font-secondary text-blue-700 mb-2">
                 Vision
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-secondary">
                 To ignite a lifelong love for learning through a holistic,
                 value-based education system that nurtures all dimensions of a
                 child’s being—intellectual, physical, emotional, and spiritual.
               </p>
             </div>
             <div className="rounded-[30px] bg-red-100 p-6 shadow border border-red-200">
-              <h3 className="text-xl font-semibold text-red-700 mb-2">
+              <h3 className="text-[24px]  font-semibold font-secondary text-red-700 mb-2">
                 Mission
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-secondary">
                 To implement the ideals of integral education by designing
                 engaging curricula and offering personalized learning
                 experiences in academics, sports, arts, music, and life skills.

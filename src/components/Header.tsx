@@ -13,6 +13,7 @@ type SubmenuItem = {
 type CourseDropdownItem = {
   label: string;
   submenu: SubmenuItem[];
+  href?: string;
 };
 
 export default function Header() {
@@ -34,18 +35,7 @@ export default function Header() {
   ];
 
   const courseDropdown: CourseDropdownItem[] = [
-    {
-      label: "Grade 9 - 12",
-      submenu: [
-        { label: "State Board", href: "/courses/grade-9-12/state-board" },
-        { label: "CBSE", href: "/courses/grade-9-12/cbse" },
-        { label: "ICSE", href: "/courses/grade-9-12/icse" },
-        { label: "IGCSE", href: "/courses/grade-9-12/igcse" },
-        { label: "NIOS", href: "/courses/grade-9-12/nios" },
-        { label: "Homeschooled", href: "/courses/grade-9-12/homeschooled" },
-        { label: "Unschooling", href: "/courses/grade-9-12/unschooled" }
-      ]
-    }
+    { label: "Grade 9 - 12", submenu: [], href: "/courses/grade-9-12" }
   ];
 
   useEffect(() => {
@@ -95,7 +85,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-10 items-center font-semibold font-secondary text-[#214586] relative">
-          {/* Dropdown */}
+          {/* Courses Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => {
@@ -115,28 +105,38 @@ export default function Header() {
                 ref={dropdownRef}
                 className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-60 z-50"
               >
-                {courseDropdown.map(({ label, submenu }) => (
+                {courseDropdown.map(({ label, submenu, href }) => (
                   <div key={label} className="relative group">
-                    <span className="px-4 py-2 text-sm text-[#214586] hover:bg-gray-100 cursor-pointer flex items-center justify-between">
-                      {label} <IoIosArrowDown className="ml-1" />
-                    </span>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-0 left-full translate-y-[-20%] mt-0 ml-1 w-56 bg-white shadow-lg rounded-md py-2 hidden group-hover:block z-50"
-                    >
-                      {submenu.map((sub) => (
-                        <Link
-                          key={sub.label}
-                          href={sub.href}
-                          className="block px-4 py-2 text-sm text-[#214586] hover:bg-gray-100"
+                    {submenu.length === 0 && href ? (
+                      <Link
+                        href={href}
+                        className="block px-4 py-2 text-sm text-[#214586] hover:bg-gray-100"
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <>
+                        <span className="px-4 py-2 text-sm text-[#214586] hover:bg-gray-100 cursor-pointer flex items-center justify-between">
+                          {label} <IoIosArrowDown className="ml-1" />
+                        </span>
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-0 left-full translate-y-[-20%] mt-0 ml-1 w-56 bg-white shadow-lg rounded-md py-2 hidden group-hover:block z-50"
                         >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </motion.div>
+                          {submenu.map((sub) => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              className="block px-4 py-2 text-sm text-[#214586] hover:bg-gray-100"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      </>
+                    )}
                   </div>
                 ))}
               </div>
@@ -205,42 +205,55 @@ export default function Header() {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden flex flex-col gap-1 pl-3"
               >
-                {courseDropdown.map(({ label, submenu }) => (
+                {courseDropdown.map(({ label, submenu, href }) => (
                   <div key={label} className="pl-1">
-                    <button
-                      onClick={() => setOpenSubmenu(openSubmenu === label ? null : label)}
-                      className="flex items-center justify-between text-left text-sm w-full text-[#214586] hover:text-[#6EA1D6] transition"
-                    >
-                      {label}
-                      <IoIosArrowDown
-                        className={`transform transition-transform ${
-                          openSubmenu === label ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    <AnimatePresence>
-                      {openSubmenu === label && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="pl-4 overflow-hidden"
+                    {submenu.length === 0 && href ? (
+                      <Link
+                        href={href}
+                        className="text-left text-sm text-[#214586] hover:text-[#6EA1D6] transition font-bold block py-1"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() =>
+                            setOpenSubmenu(openSubmenu === label ? null : label)
+                          }
+                          className="flex items-center justify-between text-left text-sm w-full text-[#214586] hover:text-[#6EA1D6] transition"
                         >
-                          {submenu.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href}
-                              className="block text-sm hover:text-[#6EA1D6] transition"
-                              onClick={() => setMenuOpen(false)}
+                          {label}
+                          <IoIosArrowDown
+                            className={`transform transition-transform ${
+                              openSubmenu === label ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {openSubmenu === label && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="pl-4 overflow-hidden"
                             >
-                              ↳ {sub.label}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                              {submenu.map((sub) => (
+                                <Link
+                                  key={sub.label}
+                                  href={sub.href}
+                                  className="block text-sm hover:text-[#6EA1D6] transition"
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  ↳ {sub.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    )}
                   </div>
                 ))}
               </motion.div>
