@@ -1,11 +1,16 @@
-'use client';
-
 import { useSearchParams } from 'next/navigation';
-import ClassCourse from '@/components/ClassCourse'; 
+import ClassCourse from '@/components/ClassCourse'; // Adjust path as needed
+import { FC } from 'react';
 
-export default function BoardPage({ params }: { params: { board: string } }) {
+interface PageProps {
+  params: {
+    board: string;
+  };
+}
+
+const BoardPage: FC<PageProps> = ({ params }) => {
   const searchParams = useSearchParams();
-  const selectedClass = searchParams.get('class'); // expects class-9, class-8, etc.
+  const selectedClass = searchParams.get('class');
 
   return (
     <div className="w-full">
@@ -21,4 +26,6 @@ export default function BoardPage({ params }: { params: { board: string } }) {
       )}
     </div>
   );
-}
+};
+
+export default BoardPage;
