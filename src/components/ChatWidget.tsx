@@ -36,9 +36,9 @@ export default function ChatWidget() {
             >
               ×
             </button>
-
+            
             <p className="text-sm font-medium text-gray-700">Hi Sagar!</p>
-            <h3 className="text-lg font-semibold text-[#214586] mt-1">I&aposm VOCA</h3>
+            <h3 className="text-lg font-semibold text-[#214586] mt-1">I&apos;m VOCA</h3>
             <p className="text-sm text-gray-500 mb-4">How can I help you?</p>
 
             <Image
