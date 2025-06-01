@@ -39,13 +39,13 @@ export default function Footer() {
               About Us
             </Link>
             <Link href="#" className="hover:underline">
-              courses
+              Courses
             </Link>
             <Link href="#" className="hover:underline">
-              careers
+              Careers
             </Link>
             <Link href="#" className="hover:underline">
-              contact us
+              Contact Us
             </Link>
           </div>
         </div>
