@@ -3,7 +3,6 @@ import { Merriweather, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ChatWidget from "@/components/ChatWidget";
@@ -81,7 +80,6 @@ export default function RootLayout({
         <Header />
         {children}
         <ChatWidget/>
-        <ScrollToTop />
         <Footer />
       </body>
     </html>

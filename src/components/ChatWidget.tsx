@@ -12,7 +12,7 @@ export default function ChatWidget() {
       {/* Floating Chat Icon */}
      <button
   onClick={() => setIsOpen(!isOpen)}
-  className="fixed bottom-50 right-6 z-50 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
+  className="fixed bottom-5 right-6 z-50 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
 >
   <Image src="/images/bot.svg" alt="Chatbot Icon" width={40} height={40} />
 </button>
@@ -26,7 +26,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 w-72 md:w-80 bg-white rounded-3xl shadow-xl p-4 text-center"
+            className="fixed bottom-24 right-6 z-50 w-72 md:w-80 bg-[#FEEFEB] rounded-3xl shadow-xl p-4 text-center"
           >
               {/* Close Button */}
             <button
@@ -37,9 +37,8 @@ export default function ChatWidget() {
               ×
             </button>
             
-            <p className="text-sm font-medium text-gray-700">Hi Sagar!</p>
-            <h3 className="text-lg font-semibold text-[#214586] mt-1">I&apos;m VOCA</h3>
-            <p className="text-sm text-gray-500 mb-4">How can I help you?</p>
+            <p className="text-sm font-medium text-[#EE842C] font-primary">Hi</p>
+            <h3 className="text-lg font-semibold text-[#AD4027] italic mt-1 font-primary">I&apos;m VOCA</h3>
 
             <Image
               src="/images/bot.svg"
@@ -48,6 +47,8 @@ export default function ChatWidget() {
               height={60}
               className="mx-auto mb-4"
             />
+                        <p className="text-sm text-[#AD4027] font-primary mb-4">How can I help you?</p>
+
 
             <div className="relative">
               <input
