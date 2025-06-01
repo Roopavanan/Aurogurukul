@@ -35,6 +35,8 @@ export default function Header() {
   ];
 
   const courseDropdown: CourseDropdownItem[] = [
+    { label: "Grade 1 - 3", submenu: [], href: "#" },
+    { label: "Grade 4 - 8", submenu: [], href: "#" },
     { label: "Grade 9 - 12", submenu: [], href: "/courses/grade-9-12" }
   ];
 
