@@ -133,7 +133,7 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
+              className="flex flex-row items-center gap-4 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
