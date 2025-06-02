@@ -6,17 +6,17 @@ import Link from "next/link";
 import IntegralEducationSection from "@/components/IntegralEducationSection";
 
 const features = [
-  { icon: "/images/icons/online.svg", label: "Online tutoring" },
+  { icon: "/images/icons/online.svg", label: "Personalized Learning Pathways" },
   {
     icon: (
       <div className="border border-[#FBBF5D] rounded-full p-2">
-        <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        <Fingerprint className="text-[#FBBF5D] w-6 h-6" />
       </div>
     ),
-    label: "Lifetime access"
+    label: "Mentorship & Community Support"
   },
-  { icon: "/images/icons/active.svg", label: "Active learning" },
-  { icon: "/images/icons/course.svg", label: "10x courses" }
+  { icon: "/images/icons/active.svg", label: "Project-Based Learning & Internship" },
+  { icon: "/images/icons/course.svg", label: "Integration with Life and Work Skills" }
 ];
 
 export default function HeroSection() {
@@ -253,19 +253,19 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
+              className="flex flex-row items-center gap-4 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                 />
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[12px] sm:text-[18px]">
+              <span className="font-bold font-primary text-[18px]">
                 {item.label}
               </span>
             </div>
