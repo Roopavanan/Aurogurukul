@@ -62,17 +62,17 @@ const stats = [
 ];
 
 const features = [
-  { icon: "/images/icons/online.svg", label: "Online tutoring" },
+  { icon: "/images/icons/online.svg", label: "Integral Education Model" },
   {
     icon: (
       <div className="border border-[#FBBF5D] rounded-full p-2">
-        <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        <Fingerprint className="text-[#FBBF5D] w-6 h-6" />
       </div>
     ),
-    label: "Lifetime access"
+    label: "Project-Based & Skill -Based Learning"
   },
-  { icon: "/images/icons/active.svg", label: "Active learning" },
-  { icon: "/images/icons/course.svg", label: "10x courses" }
+  { icon: "/images/icons/active.svg", label: "Inner Growth & Well-being" },
+  { icon: "/images/icons/course.svg", label: "Communit-led, Locally Rooted" }
 ];
 
 export default function HeroSection() {
@@ -139,13 +139,13 @@ export default function HeroSection() {
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                 />
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[18px] sm:text-2xl">
+              <span className="font-bold font-primary text-[18px]">
                 {item.label}
               </span>
             </div>
