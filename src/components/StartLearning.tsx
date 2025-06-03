@@ -33,7 +33,7 @@ const rightContent = [
   },
 ];
 
-export default function StartLearning(): JSX.Element {
+export default function StartLearning() {
   return (
     <section className="bg-[#FFF3EC] px-4 py-16 overflow-hidden">
       {/* Header */}
