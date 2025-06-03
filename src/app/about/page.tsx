@@ -16,7 +16,11 @@ const features = [
     label: "Mentorship & Community Support"
   },
   { icon: "/images/icons/active.svg", label: "Project-Based Learning & Internship" },
+<<<<<<< HEAD
   { icon: "/images/icons/course.svg", label: "1Integration with Life and Work Skills" }
+=======
+  { icon: "/images/icons/course.svg", label: "Integration with Life and Work Skills" }
+>>>>>>> 58124d644e9adb72ebbd3da8423d4929ce441d13
 ];
 
 export default function HeroSection() {
@@ -265,7 +269,11 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
+<<<<<<< HEAD
               <span className="font-bold font-primary text-[16px]">
+=======
+              <span className="font-bold font-primary text-[18px]">
+>>>>>>> 58124d644e9adb72ebbd3da8423d4929ce441d13
                 {item.label}
               </span>
             </div>

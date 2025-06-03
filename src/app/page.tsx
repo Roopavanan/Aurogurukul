@@ -67,17 +67,17 @@ const stats = [
 ];
 
 const features = [
-  { icon: "/images/icons/online.svg", label: "AI-assisted learning" },
+  { icon: "/images/icons/online.svg", label: "Online tutoring" },
   {
     icon: (
       <div className="border border-[#FBBF5D] rounded-full p-2">
         <Fingerprint className="text-[#FBBF5D] w-6 h-6" />
       </div>
     ),
-    label: "Online/offline interactive reaching sessions"
+    label: "Lifetime access"
   },
-  { icon: "/images/icons/active.svg", label: "Flexible and intuitive study plan" },
-  { icon: "/images/icons/course.svg", label: "Project-based and skill-based curriculum" }
+  { icon: "/images/icons/active.svg", label: "Active learning" },
+  { icon: "/images/icons/course.svg", label: "10x courses" }
 ];
 
 export default function HeroSection() {
@@ -135,7 +135,7 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4  w-fit mx-auto"
+              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
@@ -147,7 +147,7 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[16px] ">
+              <span className="font-bold font-primary text-[18px] sm:text-2xl">
                 {item.label}
               </span>
             </div>
