@@ -4,67 +4,9 @@ import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
 import Link from "next/link";
 import PopularCourses from "@/components/PopularCourses";
-import ExploreOfferings from "@/components/ExploreOfferings";
 import ExploreCoursesSection from "@/components/ExploreCourses";
-import ImpactStories from "@/components/ImpactStories";
 import StartLearning from "@/components/StartLearning";
 
-const blobVariants = {
-  hidden: { opacity: 0, scale: 0.5 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: i * 0.2,
-      type: "spring",
-      stiffness: 200,
-      damping: 20
-    }
-  })
-};
-
-const stats = [
-  {
-    label: "Exam Categories",
-    value: "30+",
-    textColor: "#B94726",
-    blobSrc: "/blob/red.svg",
-    style:
-      "top-[-60px] left-[50%] md:top-[-50px] md:left-[20%] w-[130px] h-[200px] md:w-[200px] md:h-[150px] "
-  },
-  {
-    label: "Video Lessons",
-    value: "3.1k+",
-    textColor: "#337A91",
-    blobSrc: "/blob/blue.svg",
-    style:
-      "top-[-70px] right-[120px]  md:top-[-50px] md:right-[200%] w-[130px] h-[120px] md:w-[200px] md:h-[150px]"
-  },
-  {
-    label: "Daily Live Classes",
-    value: "13k+",
-    textColor: "#258A51",
-    blobSrc: "/blob/green.svg",
-    style:
-      "top-[30%] left-[10px] md:top-[120px] md:left-[20%] w-[130px] h-[150px] md:w-[200px] md:h-[150px]"
-  },
-  {
-    label: "Educators",
-    value: "55+",
-    textColor: "#D7A219",
-    blobSrc: "/blob/yellow.svg",
-    style:
-      "top-[8%] right-[70%]  md:top-[120px] md:right-[150%] w-[130px] h-[140px] md:w-[200px] md:h-[150px]"
-  },
-  {
-    label: "Offline Campuses",
-    value: "1.3k+",
-    textColor: "#2F94C9",
-    blobSrc: "/blob/lightblue.svg",
-    style:
-      "bottom-[10%] right-[120px] md:bottom-[-20%] md:right-[120%] lg:bottom-[-10%] lg:right-[-100%] w-[120px] h-[120px] md:w-[200px] md:h-[150px]"
-  }
-];
 
 const features = [
   { icon: "/images/icons/online.svg", label: "Online tutoring" },
