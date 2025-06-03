@@ -15,19 +15,15 @@ export default function Footer() {
     <footer className="bg-[#214586] text-white py-10 px-4">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left: Logo */}
-        <div className="flex flex-col items-center text-center gap-2">
+        <Link href="/" className="flex flex-col items-start  gap-2">
           <Image
-            src="/images/logo.svg"
+            src="/images/footer-logo.svg"
             alt="Aurogurukul Logo"
-            width={80}
-            height={80}
-            className="w-60 h-auto object-contain"
+            width={60}
+            height={60}
+            className="w-40 h-auto object-contain"
           />
-          <span className="text-[#6EA1D6] font-semibold text-lg">
-            AUROGURUKUL
-          </span>
-          <div className="text-xs text-white font-bold">JOY OF LEARNING</div>
-        </div>
+        </Link>
 
         {/* Center: Menu */}
         <div className="flex flex-col items-center gap-6">
@@ -39,7 +35,7 @@ export default function Footer() {
               About Us
             </Link>
             <Link href="#" className="hover:underline">
-              Courses
+              Gallery
             </Link>
             <Link href="#" className="hover:underline">
               Careers
@@ -94,14 +90,17 @@ export default function Footer() {
 
       <hr className="my-8 mx-auto border-white/30 w-[300px] md:w-[600px] lg:w-[1440px] " />
 
-     <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm text-white/70 text-center">
-  <p>© {currentYear} AuroGurukul. All rights reserved.</p>
-  <div className="flex gap-4">
-    <a href="/terms" className="hover:underline">Terms of Use</a>
-    <a href="/privacy" className="hover:underline">Privacy Policy</a>
-  </div>
-</div>
-
+      <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm text-white/70 text-center">
+        <p>© {currentYear} AuroGurukul. All rights reserved.</p>
+        <div className="flex gap-4">
+          <a href="/terms" className="hover:underline">
+            Terms of Use
+          </a>
+          <a href="/privacy" className="hover:underline">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }

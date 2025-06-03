@@ -6,17 +6,17 @@ import Link from "next/link";
 import IntegralEducationSection from "@/components/IntegralEducationSection";
 
 const features = [
-  { icon: "/images/icons/online.svg", label: "Online tutoring" },
+  { icon: "/images/icons/online.svg", label: "Personalized Learning Pathways" },
   {
     icon: (
       <div className="border border-[#FBBF5D] rounded-full p-2">
-        <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        <Fingerprint className="text-[#FBBF5D] w-6 h-6" />
       </div>
     ),
-    label: "Lifetime access"
+    label: "Mentorship & Community Support"
   },
-  { icon: "/images/icons/active.svg", label: "Active learning" },
-  { icon: "/images/icons/course.svg", label: "10x courses" }
+  { icon: "/images/icons/active.svg", label: "Project-Based Learning & Internship" },
+  { icon: "/images/icons/course.svg", label: "1Integration with Life and Work Skills" }
 ];
 
 export default function HeroSection() {
@@ -25,7 +25,7 @@ export default function HeroSection() {
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
-        <div className="max-w-[1400px] mx-auto bg-[#EDF7FA] rounded-[80px] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto bg-[#EDF7FA] rounded-[60px] px-4 sm:px-6 lg:px-8">
           <div className=" h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[100px] py-10">
             {/* Left Side Content */}
             <motion.div
@@ -44,7 +44,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#EE842C] text-white px-10 py-3 rounded-lg font-semibold text-lg w-[280px]"
+                className="bg-[#EE842C] text-white px-6 py-2 rounded-lg font-semibold text-[16px] w-[208px]"
               >
                 Join Our Community
               </motion.button>
@@ -253,19 +253,19 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
+              className="flex flex-row items-center gap-4 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                 />
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[12px] sm:text-[18px]">
+              <span className="font-bold font-primary text-[16px]">
                 {item.label}
               </span>
             </div>

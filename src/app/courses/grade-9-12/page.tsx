@@ -29,20 +29,20 @@ export default function Grade912() {
   const isFormComplete = selectedClass && selectedBoard && selectedExam;
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12 text-[#214586]">
+    <main className="max-w-4xl mx-auto px-4 py-12 text-[#214586] items-center">
       <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-center font-primary">
-        Select Your Grade
+        Choose Your Grade and Board
       </h1>
 
       {/* Class Selection */}
-      <section className="mb-10">
+      <section className="mb-10 text-center">
         <h2 className="font-semibold mb-3 font-primary">Select Class</h2>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center ">
           {classOptions.map((cls) => (
             <button
               key={cls}
               onClick={() => setSelectedClass(cls)}
-              className={`px-4 py-2 text-sm rounded-full border transition ${
+              className={`px-4 py-2 text-sm rounded-full border transition  ${
                 selectedClass === cls
                   ? "bg-[#214586] text-white font-secondary"
                   : "border-gray-300 text-[#214586] hover:bg-[#6EA1D6]/20"
@@ -55,9 +55,9 @@ export default function Grade912() {
       </section>
 
       {/* Board Selection */}
-      <section className="mb-10">
+      <section className="mb-10 text-center">
         <h2 className="font-semibold mb-3 font-primary">Select Board</h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 justify-center">
           {boardOptions.map((board) => (
             <button
               key={board}
@@ -75,9 +75,9 @@ export default function Grade912() {
       </section>
 
       {/* Exam Selection */}
-      <section className="mb-10">
+      <section className="mb-10 text-center">
         <h2 className="font-semibold mb-3 font-primary">Select Exam</h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 justify-center">
           {examOptions.map((exam) => (
             <button
               key={exam}
@@ -95,7 +95,7 @@ export default function Grade912() {
       </section>
 
       {/* View Course Button */}
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 ">
         <button
           onClick={handleViewCourse}
           disabled={!isFormComplete}

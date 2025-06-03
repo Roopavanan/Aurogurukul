@@ -7,7 +7,7 @@ import PopularCourses from "@/components/PopularCourses";
 import ExploreOfferings from "@/components/ExploreOfferings";
 import ExploreCoursesSection from "@/components/ExploreCourses";
 import ImpactStories from "@/components/ImpactStories";
-
+import StartLearning from "@/components/StartLearning";
 
 const blobVariants = {
   hidden: { opacity: 0, scale: 0.5 },
@@ -29,60 +29,64 @@ const stats = [
     value: "30+",
     textColor: "#B94726",
     blobSrc: "/blob/red.svg",
-    style: "top-[-60px] left-[50%] md:top-[-50px] md:left-[20%] w-[130px] h-[200px] md:w-[200px] md:h-[150px] "
+    style:
+      "top-[-60px] left-[50%] md:top-[-50px] md:left-[20%] w-[130px] h-[200px] md:w-[200px] md:h-[150px] "
   },
   {
     label: "Video Lessons",
     value: "3.1k+",
     textColor: "#337A91",
     blobSrc: "/blob/blue.svg",
-    style: "top-[-70px] right-[120px]  md:top-[-50px] md:right-[200%] w-[130px] h-[120px] md:w-[200px] md:h-[150px]"
+    style:
+      "top-[-70px] right-[120px]  md:top-[-50px] md:right-[200%] w-[130px] h-[120px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Daily Live Classes",
     value: "13k+",
     textColor: "#258A51",
     blobSrc: "/blob/green.svg",
-    style: "top-[30%] left-[10px] md:top-[120px] md:left-[20%] w-[130px] h-[150px] md:w-[200px] md:h-[150px]"
+    style:
+      "top-[30%] left-[10px] md:top-[120px] md:left-[20%] w-[130px] h-[150px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Educators",
     value: "55+",
     textColor: "#D7A219",
     blobSrc: "/blob/yellow.svg",
-    style: "top-[8%] right-[70%]  md:top-[120px] md:right-[150%] w-[130px] h-[140px] md:w-[200px] md:h-[150px]"
+    style:
+      "top-[8%] right-[70%]  md:top-[120px] md:right-[150%] w-[130px] h-[140px] md:w-[200px] md:h-[150px]"
   },
   {
     label: "Offline Campuses",
     value: "1.3k+",
     textColor: "#2F94C9",
     blobSrc: "/blob/lightblue.svg",
-    style: "bottom-[10%] right-[120px] md:bottom-[-20%] md:right-[120%] lg:bottom-[-10%] lg:right-[-100%] w-[120px] h-[120px] md:w-[200px] md:h-[150px]"
+    style:
+      "bottom-[10%] right-[120px] md:bottom-[-20%] md:right-[120%] lg:bottom-[-10%] lg:right-[-100%] w-[120px] h-[120px] md:w-[200px] md:h-[150px]"
   }
 ];
 
 const features = [
-  { icon: "/images/icons/online.svg", label: "Online tutoring" },
+  { icon: "/images/icons/online.svg", label: "AI-assisted learning" },
   {
     icon: (
       <div className="border border-[#FBBF5D] rounded-full p-2">
-        <Fingerprint className="text-[#FBBF5D] w-10 h-10" />
+        <Fingerprint className="text-[#FBBF5D] w-6 h-6" />
       </div>
     ),
-    label: "Lifetime access"
+    label: "Online/offline interactive reaching sessions"
   },
-  { icon: "/images/icons/active.svg", label: "Active learning" },
-  { icon: "/images/icons/course.svg", label: "10x courses" }
+  { icon: "/images/icons/active.svg", label: "Flexible and intuitive study plan" },
+  { icon: "/images/icons/course.svg", label: "Project-based and skill-based curriculum" }
 ];
 
 export default function HeroSection() {
-
   return (
     <main className="overflow-x-hidden">
       {/* Hero section */}
       <section className="bg-white w-full overflow-hidden px-4">
-<div className="w-full max-w-[1400px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
-  <div className="w-full h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
+        <div className="w-full max-w-[1600px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
+          <div className="w-full h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -94,14 +98,12 @@ export default function HeroSection() {
                 Awakening the Light Within - Through Integral Education
               </h1>
               <p className="text-[#214586] mb-6 md:text-[22px] text-[18px]">
-                Inspired by Sri Aurobindo and The Mother, AuroGurukul nurtures
-                the mind, body, and spirit of every learner.
+               Inspired by The Mother and Sri Aurobindo’s vision on Education, Aurugurukul brings forward an AI-enabled learning domain to nurture the mind, body and spirit of every learner.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-               
-                className="bg-[#EE842C] text-white px-6 py-3 rounded-[8px] font-semibold text-[16px] w-[208px]"
+                className="bg-[#EE842C] text-white px-6 py-2 rounded-[8px] font-semibold text-[16px] w-[208px]"
               >
                 Join our Community
               </motion.button>
@@ -128,24 +130,24 @@ export default function HeroSection() {
       {/* Hero section End */}
 
       {/* Features */}
-      <section className="w-full py-16 px-4 bg-white overflow-hidden">
-        <div className="max-w-[1640px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-[#000] text-center">
+      <section className="w-full py-16  bg-white overflow-hidden">
+        <div className="max-w-full mx-auto  grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-[#000] text-center">
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4 md:gap-8 w-fit mx-auto"
+              className="flex flex-row items-center gap-4  w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                 />
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[18px] sm:text-2xl">
+              <span className="font-bold font-primary text-[16px] ">
                 {item.label}
               </span>
             </div>
@@ -158,7 +160,7 @@ export default function HeroSection() {
       <PopularCourses />
 
       {/* About Us */}
-      <section className="bg-[#FFF9EF] py-28 px-6 md:px-16 text-center">
+      <section className="bg-[#fff] py-28 px-6 md:px-16 text-center">
         <motion.h2
           className="text-3xl md:text-4xl font-primary font-semibold text-[#EE842C] mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -191,75 +193,10 @@ export default function HeroSection() {
       </section>
       {/* About end */}
 
-      {/* explore offers */}
-      <ExploreOfferings />
-      {/* explore offers end */}
+    
 
       {/* Integral education */}
-      <section className="relative bg-[#FFF2EC] py-16 px-6 md:px-12 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 ">
-          {/* Left Section */}
-          <div className="max-w-md z-10 text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#EE842C] font-primary mb-4">
-              Start learning with Aurogurukul
-            </h2>
-            <p className="text-gray-700 font-secondary mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              sit amet nisl tempus, ultrices mi in, finibus ligula.
-            </p>
-            <button className="bg-[#EE842C] text-white px-6  rounded-md font-semibold text-[16px] w-[135px] h-[35px]">
-              Enrol Now
-            </button>
-          </div>
-
-          {/* Right Section */}
-          <div className="relative w-[600px] h-[500px] left-50 flex items-center justify-center">
-            {/* Background blob */}
-            <div className="absolute top-10 right-10 w-[300px] h-[200px] bg-[#FFEAE1] rounded-full blur-3xl opacity-40 -z-10" />
-
-            {/* Stat blob */}
-            <div className="relative w-full h-[400px]">
-              {stats.map((item, i) => (
-                <motion.div
-                  key={i}
-                  custom={i}
-                  initial="hidden"
-                  animate="visible"
-                  variants={blobVariants}
-                  className={`absolute ${item.style} flex justify-center items-center`}
-                >
-                  <Image
-                    src={item.blobSrc}
-                    alt="blob"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                  <div
-                    className="absolute text-center flex flex-col justify-center items-center w-full h-full"
-                    style={{ color: item.textColor }}
-                  >
-                    <p className="text-[12px] md:text-[16px] font-secondary">{item.label}</p>
-                    <p className="text-[32px] md:text-[50px] font-bold  font-secondary">
-                      {item.value.replace("+", "")}
-                      <span className="text-xl">+</span>
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Student Image */}
-            <Image
-              src="/images/boy.png"
-              alt="Student"
-              width={600}
-              height={600}
-              className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[600px] lg:h-[600px] relative top-28 md:top-15 md:right-30 lg:right-0 right-70 z-20 object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <StartLearning />
       {/* Integral education end */}
 
       {/* Relevant today */}
@@ -296,7 +233,6 @@ export default function HeroSection() {
       </section>
       {/* Call to action end */}
 
-      <ImpactStories />
     </main>
   );
 }
