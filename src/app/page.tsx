@@ -84,7 +84,7 @@ export default function HeroSection() {
           {features.map((item, i) => (
             <div
               key={i}
-              className="flex flex-row items-center gap-4  w-fit mx-auto"
+              className="flex flex-row items-center gap-1 sm:gap-2 md:gap-3 w-fit mx-auto"
             >
               {typeof item.icon === "string" ? (
                 <Image
@@ -96,7 +96,7 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[16px] ">
+              <span className="font-bold font-primary text-[12px] md:text-[16px] leading-tight">
                 {item.label}
               </span>
             </div>
@@ -105,8 +105,8 @@ export default function HeroSection() {
       </section>
       {/* Feature End */}
 
-      <AnnouncementSlider/>
-      
+      <AnnouncementSlider />
+
       {/* Explorecourse  */}
       <ExploreCoursesSection />
 
@@ -168,7 +168,10 @@ export default function HeroSection() {
           </h2>
 
           <p className="text-gray-700 font-secondary text-md mb-8">
-       Unlock a world of knowledge and skills tailored just for you. Explore dynamic courses, engage in interactive activities, and watch your potential soar. Join us and start transforming your future today!
+            Unlock a world of knowledge and skills tailored just for you.
+            Explore dynamic courses, engage in interactive activities, and watch
+            your potential soar. Join us and start transforming your future
+            today!
           </p>
 
           <div className="flex justify-center gap-8 flex-wrap">

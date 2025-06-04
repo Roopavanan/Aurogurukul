@@ -41,7 +41,7 @@ type ArrowProps = {
 const NextArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="absolute -right-10 top-1/2 -translate-y-1/2 z-10 bg-[#FCCB7A] hover:bg-[#f4c489] text-white p-2 rounded-full shadow"
+    className="absolute  -right-2 md:-right-10 top-1/2 -translate-y-1/2 z-10 bg-[#FCCB7A] hover:bg-[#f4c489] text-white p-2 rounded-full shadow"
   >
     <FaChevronRight />
   </button>
@@ -50,7 +50,7 @@ const NextArrow = ({ onClick }: ArrowProps) => (
 const PrevArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="absolute -left-10 top-1/2 -translate-y-1/2 z-10 bg-[#FCCB7A] hover:bg-[#f4c489] text-white p-2 rounded-full shadow"
+    className="absolute -left-2 md:-left-10 top-1/2 -translate-y-1/2 z-10 bg-[#FCCB7A] hover:bg-[#f4c489] text-white p-2 rounded-full shadow"
   >
     <FaChevronLeft />
   </button>
@@ -80,7 +80,7 @@ const AnnouncementSlider: React.FC = () => {
         <Slider {...settings}>
           {announcements.map((announcement) => (
             <div key={announcement.id} className="w-full px-2">
-              <div className="bg-[#FEF0D8] rounded-[24px] px-6 md:px-16 lg:px-28 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="bg-[#FEF0D8] rounded-[24px] px-6 md:px-16 lg:px-28 py-12 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Text Content */}
                 <div className="flex-1 text-left">
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 font-primary">

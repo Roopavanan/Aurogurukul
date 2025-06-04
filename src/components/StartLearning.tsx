@@ -60,7 +60,7 @@ export default function StartLearning() {
       {/* Content Grid */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-12">
         {/* Left Column */}
-        <div className="space-y-10 text-left mx-8">
+        <div className="space-y-10 text-center md:text-left mx-8">
           {leftContent.map((item, index) => (
             <motion.div
               key={item.title}
@@ -84,7 +84,7 @@ export default function StartLearning() {
           viewport={{ once: true }}
         >
           <Image
-            src="/svg/center.svg" // ✅ Replace with your actual SVG file
+            src="/svg/center.svg" 
             alt="Venn Diagram"
             width={600}
             height={300}
@@ -93,7 +93,7 @@ export default function StartLearning() {
         </motion.div>
 
         {/* Right Column */}
-        <div className="space-y-10 text-left mx-8">
+        <div className="space-y-10 text-center md:text-left mx-8">
           {rightContent.map((item, index) => (
             <motion.div
               key={item.title}
