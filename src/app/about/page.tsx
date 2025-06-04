@@ -123,7 +123,7 @@ export default function HeroSection() {
         {/* Background SVG */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/abt-bg.svg" // Replace with your SVG background file
+            src="/images/abt-bg.svg" 
             alt="Background"
             fill
             className="object-cover"
@@ -131,15 +131,15 @@ export default function HeroSection() {
         </div>
 
         {/* Content Grid */}
-        <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-4 items-center">
           {/* Left - Image */}
           <div className="rounded-[30px] overflow-hidden shadow-md border border-gray-200">
             <Image
               src="/images/teaching.png"
               alt="Teaching"
               width={600}
-              height={400}
-              className="w-full h-full object-cover"
+              height={500}
+              className="w-full h-[510px] object-cover"
             />
           </div>
 
@@ -150,9 +150,7 @@ export default function HeroSection() {
                 Vision
               </h3>
               <p className="text-gray-700 leading-relaxed font-secondary">
-                To ignite a lifelong love for learning through a holistic,
-                value-based education system that nurtures all dimensions of a
-                child’s being—intellectual, physical, emotional, and spiritual.
+                To ignite a lifelong love for learning by offering a holistic, values-based education that nurtures every dimension of a child’s being—intellectual, physical, emotional, and spiritual. We envision a future where education inspires children to grow into joyful, conscious, and fulfilled human beings.
               </p>
             </div>
             <div className="rounded-[30px] bg-red-100 p-6 shadow border border-red-200">
@@ -160,11 +158,7 @@ export default function HeroSection() {
                 Mission
               </h3>
               <p className="text-gray-700 leading-relaxed font-secondary">
-                To implement the ideals of integral education by designing
-                engaging curricula and offering personalized learning
-                experiences in academics, sports, arts, music, and life skills.
-                We empower students to grow into conscious, compassionate, and
-                competent individuals ready to meet the challenges of life.
+                To bring the ideals of Integral Education into everyday learning through thoughtfully designed, engaging experiences across academics, arts, sports, well-being, and life skills. Our mission is to empower each student to discover their inner potential, grow with purpose, and thrive as compassionate, capable, and future-ready individuals in an ever-evolving world.
               </p>
             </div>
           </div>
@@ -197,19 +191,11 @@ export default function HeroSection() {
             A New Paradigm in Learning
           </h3>
           <p className="text-[#214586] font-secondary leading-relaxed">
-            Integral Education is a transformative and holistic approach that
-            sees education as a journey of self-discovery, self-mastery, and
-            inner growth—not just a means to acquire degrees or secure a career.
-            Rooted in the ideals of Sri Aurobindo and The Mother, it seeks the
-            harmonious development of all parts of the being: physical, mental,
-            emotional (vital), psychic, and spiritual.
+            Integral Education is a transformative and holistic approach that sees education as a journey of self-discovery, self-mastery, and inner growth—not just a means to acquire degrees or secure a career. Rooted in the ideals of Sri Aurobindo and The Mother, it seeks the harmonious development of all parts of the being: physical, mental, emotional (vital), psychic, and spiritual.
+
           </p>
           <p className="text-[#214586] font-secondary mt-4 leading-relaxed">
-            Unlike conventional systems that prioritize academic results and
-            uniform benchmarks, Integral Education values the uniqueness of each
-            learner, encouraging the unfolding of their deeper purpose and full
-            potential. It reimagines education as a dynamic, living process—one
-            that evolves with the learner and connects deeply with life itself.
+           Unlike conventional systems that prioritize academic results and uniform benchmarks, Integral Education values the uniqueness of each learner, encouraging the unfolding of their deeper purpose and full potential. It reimagines education as a dynamic, living process—one that evolves with the learner and connects deeply with life itself.
           </p>
         </div>
       </motion.section>
@@ -226,20 +212,11 @@ export default function HeroSection() {
             Why is Integral Education Relevant Today?
           </h2>
           <p className="text-gray-800 text-base sm:text-lg leading-relaxed mb-4">
-            In today’s rapidly changing world, students are often burdened by
-            information overload, academic stress, and emotional disconnection.
-            Traditional education systems focus heavily on marks and
-            memorization, often leaving behind essential aspects of
-            growth—emotional intelligence, creativity, empathy, physical
-            wellness, and moral clarity.
+            In today’s rapidly changing world, students are often burdened by information overload, academic stress, and emotional disconnection. Traditional education systems focus heavily on marks and memorization, often leaving behind essential aspects of growth—emotional intelligence, creativity, empathy, physical wellness, and moral clarity.
+
           </p>
           <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
-            Integral Education addresses this imbalance by nurturing the whole
-            child, creating a space where learning becomes joyful, purposeful,
-            and deeply human. It helps children build resilience, develop inner
-            balance, and become more conscious, confident, and compassionate
-            individuals, fully prepared to meet life’s challenges—not just
-            exams.
+            Integral Education addresses this imbalance by nurturing the whole child, creating a space where learning becomes joyful, purposeful, and deeply human. It helps children build resilience, develop inner balance, and become more conscious, confident, and compassionate individuals, fully prepared to meet life’s challenges—not just exams.
           </p>
         </div>
       </motion.section>
@@ -265,7 +242,7 @@ export default function HeroSection() {
               ) : (
                 item.icon
               )}
-              <span className="font-bold font-primary text-[18px]">
+              <span className="font-bold font-primary text-[16px]">
                 {item.label}
               </span>
             </div>

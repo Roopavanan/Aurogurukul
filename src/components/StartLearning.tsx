@@ -35,7 +35,7 @@ const rightContent = [
 
 export default function StartLearning() {
   return (
-    <section className="bg-[#FFF3EC] px-4 py-16 overflow-hidden">
+    <section className="bg-[#FFF3EC] px-4 py-24 overflow-hidden">
       {/* Header */}
       <div className="max-w-8xl mx-auto text-center px-4">
         <motion.h2

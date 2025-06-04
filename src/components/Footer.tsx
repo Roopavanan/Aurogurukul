@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <hr className="my-8 mx-auto border-white/30 w-[300px] md:w-[600px] lg:w-[1440px] " />
+      <hr className="my-8 mx-auto border-white/30 w-[300px] md:w-[600px] lg:w-[1300px]  " />
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm text-white/70 text-center">
         <p>© {currentYear} AuroGurukul. All rights reserved.</p>

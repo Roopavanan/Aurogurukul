@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosArrowForward } from 'react-icons/io';
-
+import { IoIosArrowForward } from "react-icons/io";
 
 type SubjectTag = {
   name: string;
@@ -16,6 +14,7 @@ type SubjectTag = {
 type CourseCategory = {
   id: string;
   title: string;
+  course: string;
   description: string;
   bgColor: string;
   textColor: string;
@@ -29,237 +28,257 @@ export default function ExploreCourses() {
 
   const categories: CourseCategory[] = [
     {
-      id: "class-1-3",
-      title: "Class 1 - 3",
+      id: "class 9",
+      title: "Class 9",
+      course: "CourseA - 160 Hours",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nisl tempus, ultrices mi in, finibus ligula.",
+        "In Mathematics, Science, and Aptitude to build a strong foundation in Ideal for: (NEET/ JEE Foundation, , NTSE, Olympiads )",
       bgColor: "#F8F3FD",
       textColor: "#8363A9",
       arrowBgColor: "#C5A0F1",
       subjects: [
-        { name: "English", id: "english-1-3" },
-        { name: "Hindi", id: "hindi-1-3" },
-        { name: "Mathematics", id: "mathematics-1-3" },
-        { name: "Social Science", id: "social-science-1-3" },
-        { name: "Visual Elements", id: "visual-elements-1-3" }
+        { name: "Physics", id: "physics-9" },
+        { name: "Chemistry", id: "chemistry-9" },
+        { name: "Biology", id: "biology-9" },
+        { name: "Mathematics", id: "mathematics-9" },
+        { name: "Mental Ability", id: "mental ability-9" }
       ]
     },
     {
-      id: "class-4-8",
-      title: "Class 4 - 8",
+      id: "class-9-1",
+      title: "Class 9",
+      course: "CourseB - 160 Hours",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nisl tempus, ultrices mi in, finibus ligula.",
+        "Development of Language Skills, Aptitude, General Knowledge, and General Science, mathematics Ideal for: Aspirants of IAS, IPS, IFS, Leadership, and Entrepreneurship  ",
       bgColor: "#FFF9EF",
       textColor: "#B28842",
       arrowBgColor: "#FCCB7A",
       subjects: [
-        { name: "English", id: "english-4-8" },
-        { name: "Language", id: "language-4-8" },
-        { name: "Mathematics", id: "mathematics-4-8" },
-        { name: "Visual Studies", id: "visual-studies-4-8" },
-        { name: "History", id: "history-4-8" },
-        { name: "Biology", id: "biology-4-8" }
+        { name: "English", id: "english-9-1" },
+        { name: "General studies", id: "general studies-9-1" },
+        { name: "Mental Ability", id: "mental ability-9-1" },
+        { name: "General Science", id: "general science-9-1" },
+        { name: "Mathematics", id: "mathematics-9-1" }
       ]
     },
     {
-      id: "class-9-12",
-      title: "Class 9 - 12",
+      id: "class-10",
+      title: "Class 10",
+      course: "CourseA - 160 Hours",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nisl tempus, ultrices mi in, finibus ligula.",
+        "Advanced training in Science and Mathematics for careers in Medicine, Engineering, and Technology.",
       bgColor: "#F4FCF5",
       textColor: "#669E6E",
       arrowBgColor: "#A4E4AD",
       subjects: [
-        { name: "JEE", id: "jee-9-12" },
-        { name: "English", id: "english-9-12" },
-        { name: "Maths", id: "maths-9-12" },
-        { name: "History", id: "history-9-12" },
-        { name: "Geographical Study", id: "geographical-study-9-12" },
-        { name: "French", id: "french-9-12" },
-        { name: "Artificial Intelligence", id: "ai-9-12" },
-        { name: "Visual Communication", id: "visual-communication-9-12" }
+        { name: "Mathematics", id: "mathematics-10" },
+        { name: "Physics", id: "physics-10" },
+        { name: "Biology", id: "biology-10" },
+        { name: "Chemistry", id: "chemistry-10" },
+        { name: "Mental Ability", id: "mental-ability-10" }
       ]
     },
     {
-      id: "under-graduate",
-      title: "Under Graduate",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nisl tempus, ultrices mi in, finibus ligula.",
+      id: "class-10-1",
+      title: "Class 10",
+      course: "CourseB - 160 Hours",
+      description: "IAS, IPS, IFS Aspirants, Leadership, and Entrepreneurs.",
       bgColor: "#FEEFEB",
       textColor: "#AD4027",
       arrowBgColor: "#F6785B",
       subjects: [
-        { name: "JEE", id: "jee-ug" },
-        { name: "Engineer", id: "engineer-ug" },
-        { name: "French", id: "french-ug" },
-        { name: "Civil Service", id: "civil-service-ug" },
-        { name: "B.Tech", id: "btech-ug" }
+        { name: "JEE", id: "jee-10-1" },
+        { name: "Engineer", id: "engineer-10-1" },
+        { name: "French", id: "french-10-1" },
+        { name: "Civil Service", id: "civil-service-10-1" },
+        { name: "B.Tech", id: "btech-10-1" }
+      ]
+    },
+    {
+      id: "class-10-2",
+      title: "Class 10",
+      course: "CourseC - 160 Hours",
+      description: "Optimized Performance in Class 10 Board Exams.",
+      bgColor: "#F8F3FD",
+      textColor: "#8363A9",
+      arrowBgColor: "#C5A0F1",
+      subjects: [
+        { name: "English", id: "english-10-2" },
+        { name: "Science", id: "science-10-2" },
+        { name: "Social Science", id: "social-science-10-2" },
+        { name: "Mathematics", id: "mathematics-10-2" }
+      ]
+    },
+    {
+      id: "class-11-12",
+      title: "Class 11 & 12",
+      course: "CourseA - 320 Hours",
+      description: " (Integrated) Board + NEET Preparation.  ",
+      bgColor: "#FFF9EF",
+      textColor: "#B28842",
+      arrowBgColor: "#FCCB7A",
+      subjects: [
+        { name: "Physics", id: "physics-11-12" },
+        { name: "Chemistry", id: "chemistry-11-12" },
+        { name: "Botany", id: "botany-11-12" },
+        { name: "Zology", id: "zology-11-12" }
+      ]
+    },
+    {
+      id: "class-11-12-1",
+      title: "Class 11 & 12",
+      course: "CourseB - 320 Hours",
+      description: "Board + IIT-JEE Preparation.",
+      bgColor: "#F4FCF5",
+      textColor: "#669E6E",
+      arrowBgColor: "#A4E4AD",
+      subjects: [
+        { name: "Mathematics", id: "mathematics-11-12" },
+        { name: "Physics", id: "physics-11-12" },
+        { name: "Chemistry", id: "chemistry-11-12" }
+      ]
+    },
+    {
+      id: "class-11-12-2",
+      title: "Class 11 & 12",
+      course: "CourseC - 320 Hours",
+      description: "Board ( Commerce Stream ) + CA foundation.",
+      bgColor: "#FEEFEB",
+      textColor: "#AD4027",
+      arrowBgColor: "#F6785B",
+      subjects: [
+        { name: "Business Mathematics", id: "business-mathematics-11-12-2" },
+        { name: "Accounting", id: "accounting-11-12-2" },
+        { name: "Economics", id: "economics-11-12-2" }
+      ]
+    },
+    {
+      id: "12th Pass",
+      title: "12th Pass ",
+      course: "CourseA - 540 Hours",
+      description: "Integrated + NEET",
+      bgColor: "#F8F3FD",
+      textColor: "#8363A9",
+      arrowBgColor: "#C5A0F1",
+      subjects: [
+        { name: "Physics", id: "physics-12th" },
+        { name: "Chemistry", id: "chemistry-12th" },
+        { name: "Zoology", id: "zoology-12th" },
+        { name: "Botany", id: "botany-12th" }
+      ]
+    },
+    {
+      id: "12th Pass-1",
+      title: "12th Pass",
+      course: "CourseB - 540 Hours",
+      description: "JEE Mains/ Advanced",
+      bgColor: "#FFF9EF",
+      textColor: "#B28842",
+      arrowBgColor: "#FCCB7A",
+      subjects: [
+        { name: "Physics", id: "physics-12th-2" },
+        { name: "Chemistry", id: "chemistry-12th-2" },
+        { name: "Mathematics", id: "mathematics-12th-2" }
       ]
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: 1,
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    },
-    hover: {
-      scale: 1.05,
-      backgroundColor: "#e67e22",
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10
-      }
-    }
-  };
-
   return (
     <section
       ref={sectionRef}
-      className="w-full py-28 px-4 md:px-6 lg:px-8 relative overflow-hidden"
+      className="w-full py-28  relative overflow-hidden"
     >
-      {/* Background SVG Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Image
           src="/icons/red-line.svg"
           alt="Decorative line background"
           fill
-          className="object-fill object-center opacity-50 "
+          className="object-fill object-center opacity-50"
         />
-    
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto ">
         <motion.div
           className="text-center mb-12"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={titleVariants}
+          initial={{ opacity: 0, y: -20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ type: "spring", stiffness: 100, damping: 12 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold font-primary text-[#F97316] mb-4">
             Explore Courses
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto font-secondary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet nisl tempus, ultrices mi in, finibus ligula.
-          </p>
+         
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={containerVariants}
-        >
-          {categories.map((category) => (
-            <motion.div
-              key={category.id}
-              className="rounded-2xl p-6 relative overflow-hidden cursor-pointer"
-              style={{ backgroundColor: category.bgColor }}
-              variants={itemVariants}
-              whileHover={{
-                y: -5,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-                transition: { type: "spring", stiffness: 300 }
-              }}
-            >
-              <Link href={`/courses/${category.id}`} className="block">
-                <div className="flex justify-between items-start mb-4">
-                  <h3
-                    className="text-xl font-bold font-primary"
+        {/* Infinite Scrolling Slider */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-6 animate-slide "
+            style={{ width: `${categories.length * 280 * 2}px` }}
+            animate={{
+              x: ["0%", "-50%"]
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 40,
+              ease: "linear"
+            }}
+          >
+            {[...categories, ...categories].map((category, index) => (
+              <div
+                key={index}
+                className="h-[340px] w-[280px] flex-shrink-0 rounded-2xl p-6 relative overflow-hidden cursor-pointer"
+                style={{ backgroundColor: category.bgColor }}
+              >
+                <Link href={`/courses/${category.id}`} className="block">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3
+                      className="text-xl font-bold font-primary"
+                      style={{ color: category.textColor }}
+                    >
+                      {category.title}
+                       <p
+                    className="mb-4 text-sm font-primary"
                     style={{ color: category.textColor }}
                   >
-                    {category.title}
-                  </h3>
-                 <div
-  className="w-8 h-8 rounded-full flex items-center justify-center"
-  style={{ backgroundColor: category.arrowBgColor }}
->
-  <IoIosArrowForward className="text-white text-lg" />
-</div>
-
-                </div>
-                <p className="text-gray-600 mb-6 text-sm font-secondary">
-                  {category.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {category.subjects.map((subject) => (
-                    <span
-                      key={subject.id}
-                      className="text-xs px-3 py-1 rounded-[6px] border"
-                      style={{
-                        borderColor: category.textColor,
-                        color: category.textColor,
-                        backgroundColor: "transparent"
-                      }}
+                     {category.course}
+                  </p>
+                    </h3>
+                    
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: category.arrowBgColor }}
                     >
-                      {subject.name}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="flex justify-center mt-12 "
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={buttonVariants}
-        >
-          <Link
-            href="/courses"
-            className="bg-[#EE842C] hover:bg-[#e67e22] text-white text-[16px] font-medium px-8 py-2 rounded-[8px] transition-all duration-300"
-          >
-            Explore All Courses
-          </Link>
-        </motion.div>
+                      <IoIosArrowForward className="text-white text-lg" />
+                    </div>
+                  </div>
+                  
+                  <p
+                    className="mb-4 text-sm font-secondary"
+                    style={{ color: category.textColor }}
+                  >
+                    <strong>Focus:</strong> {category.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {category.subjects.map((subject) => (
+                      <span
+                        key={subject.id}
+                        className="text-xs px-3 py-1 rounded-[6px] border"
+                        style={{
+                          borderColor: category.textColor,
+                          color: category.textColor
+                        }}
+                      >
+                        {subject.name}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
