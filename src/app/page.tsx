@@ -66,7 +66,7 @@ export default function HeroSection() {
               className="order-1 md:order-2"
             >
               <Image
-                src="/images/hero.webp"
+                src="/images/hero-banner.webp"
                 alt="Happy Student"
                 width={480}
                 height={600}

@@ -21,7 +21,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-9-a",
     title: "Class 9",
-    course: "CourseA - 160 Hours",
+    course: "Course A - 160 Hours",
     description:
       "In Mathematics, Science, and Aptitude to build a strong foundation in Ideal for: (NEET/ JEE Foundation, , NTSE, Olympiads )",
     bgColor: "#F8F3FD",
@@ -47,7 +47,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-9-b",
     title: "Class 9",
-    course: "CourseB - 160 Hours",
+    course: "Course B - 160 Hours",
     description:
       "Development of Language Skills, Aptitude, General Knowledge, and General Science, mathematics Ideal for: Aspirants of IAS, IPS, IFS, Leadership, and Entrepreneurship  ",
     bgColor: "#FFF9EF",
@@ -72,7 +72,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-10-a",
     title: "Class 10",
-    course: "CourseA - 160 Hours",
+    course: "Course A - 160 Hours",
     description:
       "Advanced training in Science and Mathematics for careers in Medicine, Engineering, and Technology.",
     bgColor: "#F4FCF5",
@@ -98,7 +98,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-10-b",
     title: "Class 10",
-    course: "CourseB - 160 Hours",
+    course: "Course B - 160 Hours",
     description: "IAS, IPS, IFS Aspirants, Leadership, and Entrepreneurs.",
     bgColor: "#FEEFEB",
     textColor: "#AD4027",
@@ -123,7 +123,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-10-c",
     title: "Class 10",
-    course: "CourseC - 160 Hours",
+    course: "Course C - 160 Hours",
     description: "Optimized Performance in Class 10 Board Exams.",
     bgColor: "#F8F3FD",
     textColor: "#8363A9",
@@ -148,7 +148,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-11-12-a",
     title: "Class 11 & 12",
-    course: "CourseA - 320 Hours",
+    course: "Course A - 320 Hours",
     description: " (Integrated) Board + NEET Preparation.  ",
     bgColor: "#FFF9EF",
     textColor: "#B28842",
@@ -163,14 +163,14 @@ export const categories: CourseCategory[] = [
       { name: "Physics", id: "physics-11-12" },
       { name: "Chemistry", id: "chemistry-11-12" },
       { name: "Botany", id: "botany-11-12" },
-      { name: "Zology", id: "zology-11-12" }
+      { name: "Zoology", id: "zoology-11-12" }
     ],
     fees: "90,000"
   },
   {
     id: "class-11-12-b",
     title: "Class 11 & 12",
-    course: "CourseB - 320 Hours",
+    course: "Course B - 320 Hours",
     description: "Board + IIT-JEE Preparation.",
     bgColor: "#F4FCF5",
     textColor: "#669E6E",
@@ -190,7 +190,7 @@ export const categories: CourseCategory[] = [
   {
     id: "class-11-12-c",
     title: "Class 11 & 12",
-    course: "CourseC - 320 Hours",
+    course: "Course C - 320 Hours",
     description: "Board ( Commerce Stream ) + CA foundation.",
     bgColor: "#FEEFEB",
     textColor: "#AD4027",
@@ -210,7 +210,7 @@ export const categories: CourseCategory[] = [
   {
     id: "12th-Pass-a",
     title: "12th Pass ",
-    course: "CourseA - 540 Hours",
+    course: "Course A - 540 Hours",
     description: "Integrated + NEET",
     bgColor: "#F8F3FD",
     textColor: "#8363A9",
@@ -231,7 +231,7 @@ export const categories: CourseCategory[] = [
   {
     id: "12th-Pass-b",
     title: "12th Pass",
-    course: "CourseB - 540 Hours",
+    course: "Course B - 540 Hours",
     description: "JEE Mains/ Advanced",
     bgColor: "#FFF9EF",
     textColor: "#B28842",

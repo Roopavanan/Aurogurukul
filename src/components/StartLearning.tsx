@@ -84,7 +84,7 @@ export default function StartLearning() {
           viewport={{ once: true }}
         >
           <Image
-            src="/svg/center.svg" 
+            src="/svg/venn.svg" 
             alt="Venn Diagram"
             width={600}
             height={300}
