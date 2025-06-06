@@ -23,7 +23,7 @@ export const categories: CourseCategory[] = [
     title: "Class 9",
     course: "Course A - 160 Hours",
     description:
-      "In Mathematics, Science, and Aptitude to build a strong foundation in Ideal for: (NEET/ JEE Foundation, , NTSE, Olympiads )",
+      "In Mathematics, Science, and Aptitude to build a strong foundation in Ideal for: (NEET/ JEE Foundation, NTSE, Olympiads)",
     bgColor: "#F8F3FD",
     textColor: "#8363A9",
     arrowBgColor: "#C5A0F1",
