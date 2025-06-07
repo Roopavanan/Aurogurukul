@@ -38,6 +38,8 @@ export default function Header() {
     { label: "Grade 9 - 12", submenu: [], href: "/courses/grade-9-12" },
     { label: "Grade 1 - 3", submenu: [], href: "#" },
     { label: "Grade 4 - 8", submenu: [], href: "#" },
+        { label: "Master Programs", submenu: [], href: "#" },
+
   ];
 
   useEffect(() => {
@@ -108,7 +110,7 @@ export default function Header() {
     className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-60 z-50"
   >
     {courseDropdown.map(({ label, href }) => {
-      const isComingSoon = label === "Grade 1 - 3" || label === "Grade 4 - 8";
+      const isComingSoon = label === "Grade 1 - 3" || label === "Grade 4 - 8" || label ==="Master Programs";
       return (
         <div
           key={label}

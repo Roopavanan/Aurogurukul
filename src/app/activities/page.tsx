@@ -34,7 +34,7 @@ const page = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#EE842C] text-white px-6 py-2 rounded-[8px] font-semibold text-[16px] w-[208px]"
               >
-                Explore More
+                Coming Soon
               </motion.button>
             </motion.div>
 

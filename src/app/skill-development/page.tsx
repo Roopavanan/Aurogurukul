@@ -21,7 +21,7 @@ export default function ActivitiesSection() {
             Where Exploration Meets Expression
           </p>
           <button className="bg-[#EE842C] hover:bg-[#ef8f1bde] text-white text-sm px-5 py-2 rounded-md font-semibold">
-            Join Our Community
+            Coming Soon
           </button>
         </motion.div>
 

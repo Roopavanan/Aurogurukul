@@ -173,7 +173,7 @@ export default function HeroSection() {
 
           <div className="flex justify-center gap-8 flex-wrap">
             <Link
-              href="/enrol"
+              href="/contact"
               className="bg-[#EE842C] hover:bg-[#d8701d] text-white px-8 py-2 rounded-[8px] text-[16px]  font-semibold"
             >
               Enrol Now

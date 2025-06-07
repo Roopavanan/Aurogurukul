@@ -88,13 +88,13 @@ export default function VerticalTabs() {
               </div>
             </div>
             <div className="mt-4 sm:mt-0 sm:text-right">
-              <p className="text-sm text-gray-800">This course is scheduled to start</p>
+              {/* <p className="text-sm text-gray-800">This course is scheduled to start</p>
               <p
                 className="font-semibold text-md"
                 style={{ color: item.iconBg }}
               >
                 {item.start}
-              </p>
+              </p> */}
               <button
                 className="mt-2 px-4 py-2 rounded text-white text-sm font-medium"
                 style={{
