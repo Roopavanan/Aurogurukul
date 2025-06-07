@@ -9,21 +9,21 @@ const contactData = [
     icon: <FaMapMarkerAlt className="text-white text-lg" />,
     bgColor: "bg-blue-600",
     title: "Visit Us",
-    line1: "123 Education Street",
-    line2: "Learning City, LC 12345"
+    line1: "6, Lally Tollendal St, ",
+    line2: "Heritage Town, Puducherry, 605002"
   },
   {
     icon: <FaPhone className="text-white text-lg" />,
     bgColor: "bg-green-500",
     title: "Call Us",
-    line1: "+1 (555) 123-4567",
+    line1: "+91 7530017093",
     line2: "Mon–Fri 8AM–6PM"
   },
   {
     icon: <FaEnvelope className="text-white text-lg" />,
     bgColor: "bg-purple-600",
     title: "Email Us",
-    line1: "info@edusite.com",
+    line1: "contact@aurogurukul.com",
     line2: "Response within 24hrs"
   },
   {
@@ -39,10 +39,10 @@ const contactData = [
 
 
  const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-600" },
-    { icon: Twitter, href: "#", color: "hover:text-blue-400" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-600" },
-    { icon: Linkedin, href: "#", color: "hover:text-blue-700" }
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61577110350187", color: "hover:text-blue-600" },
+    { icon: Twitter, href: "https://x.com/AuroGurukul", color: "hover:text-blue-400" },
+    { icon: Instagram, href: "https://www.instagram.com/aurogurukul?igsh=MXNjbXZnbjU3OXNlMQ==", color: "hover:text-pink-600" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/aurogurukul/", color: "hover:text-blue-700" }
   ];
 
 export default function ContactPage() {
@@ -63,7 +63,7 @@ export default function ContactPage() {
       </div>
 
       <div className="text-center my-12 max-w-7xl mx-auto w-full py-12">
-        <h2 className="text-3xl font-bold mb-12 font-primary">
+        <h2 className="text-3xl text-[#EE842C] font-bold mb-12 font-primary">
           Contact Information
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 justify-center">
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-semibold font-primary">
+                <h3 className="text-lg font-semibold font-primary text-[#EE842C]">
                   {item.title}
                 </h3>
                 <p className="font-bold font-secondary">{item.line1}</p>
@@ -96,7 +96,7 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="text-center py-12"
       >
-        <h3 className="text-xl font-semibold text-gray-800 mb-6 font-primary">Follow Us</h3>
+        <h3 className="text-xl font-semibold text-[#EE842C] mb-6 font-primary">Follow Us</h3>
         <div className="flex justify-center space-x-6">
           {socialLinks.map((social, index) => (
             <motion.a
@@ -122,17 +122,19 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
+                required
                 placeholder="Full Name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF8A00]"
               />
               <input
                 type="email"
+                required
                 placeholder="Email Address"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF8A00]"
               />
             </div>
 
-            <select className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF8A00]">
+            <select required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF8A00]">
               <option>Select inquiry type</option>
               <option>Admissions</option>
               <option>Support</option>
@@ -141,20 +143,22 @@ export default function ContactPage() {
 
             <input
               type="text"
+              required
               placeholder="Brief subject line"
               className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF8A00]"
             />
 
             <textarea
               placeholder="Tell us how we can help you..."
+              required
               className="w-full px-4 py-3 border border-gray-300 rounded-md h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#FF8A00]"
             />
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#FF8A00] to-[#1B3C73] text-white py-3 rounded-md font-medium hover:opacity-90 transition duration-200"
+              className="w-full bg-[#EE842C] text-white py-3 rounded-md font-medium hover:opacity-90 transition duration-200"
             >
-              Send Message ✈️
+              Send Message 
             </button>
           </form>
         </div>
@@ -166,13 +170,13 @@ export default function ContactPage() {
               Visit Our Campus
             </h3>
             <p className="text-[#1B3C73] text-lg font-medium">
-              123 Education Street
+              6, Lally Tollendal St, 
             </p>
-            <p className="text-[#FF8A00] mb-4">Learning City, LC 12345</p>
+            <p className="text-[#FF8A00] mb-4">Heritage Town, Puducherry, 605002</p>
           </div>
           <div className="w-full h-64 rounded-md overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1321954555933!2d-122.42177868468117!3d37.77492927975953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e2e0a7f2e6f%3A0xc6cb85e9db60c863!2s123%20Education%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1710000000000"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d487.94012605670275!2d79.8355634!3d11.9383861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5363d155051fd7%3A0x8f317119bae6a6bc!2s6%2C%20Lally%20Tollendal%20St%2C%20Heritage%20Town%2C%20Puducherry%2C%20605002!5e0!3m2!1sen!2sin!4v1749318535238!5m2!1sen!2sin"
               width="100%"
               height="100%"
               loading="lazy"

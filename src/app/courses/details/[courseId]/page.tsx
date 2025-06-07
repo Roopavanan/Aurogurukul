@@ -123,6 +123,19 @@ export default function CourseDetailsPage() {
         </motion.div>
       </section>
 
+ {/* 🟠 Note for Class 9 & 10 */}
+      {(course.title === "Class 9" || course.title === "Class 10") && (
+        <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-28 py-8">
+          <h6 className="text-[#D65104] font-bold font-primary text-lg md:text-[34px] mb-2">Note:</h6>
+          <p className="text-gray-800 text-sm md:text-lg leading-relaxed font-secondary">
+            A mental ability course for students aims to enhance cognitive skills, problem-solving abilities, and overall mental acuity,
+            particularly in areas such as critical thinking, logical reasoning, and numerical reasoning. These courses prepare students
+            for entrance exams and competitive assessments by developing skills needed for success in those areas.
+          </p>
+        </div>
+      )}
+
+
       {/* 🧾 Popup Form */}
       {showForm && (
         <BuyCourseForm

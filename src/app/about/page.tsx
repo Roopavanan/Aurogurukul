@@ -41,13 +41,15 @@ export default function HeroSection() {
                 Inspired by Sri Aurobindo and The Mother, AuroGurukul nurtures
                 the mind, body, and spirit of every learner.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#EE842C] text-white px-6 py-2 rounded-lg font-semibold text-[16px] w-[208px]"
-              >
-                Join Our Community
-              </motion.button>
+              <motion.div
+  whileTap={{ scale: 0.95 }}
+>
+  <Link href="/contact">
+    <div className="bg-[#EE842C] text-white px-6 py-2 rounded-[8px] font-semibold text-[16px] w-[208px] text-center">
+      Join our Community
+    </div>
+  </Link>
+</motion.div>
             </motion.div>
 
             {/* Right Side Image */}

@@ -9,7 +9,7 @@ const page = () => {
   return (
     <main className="overflow-x-hidden">
       <section className="bg-white w-full overflow-hidden px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-[1600px] mx-auto bg-[#8DB3DB] rounded-[60px] px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1600px] mx-auto bg-[#EDF7FA] rounded-[60px] px-4 sm:px-6 lg:px-8">
           <div className="w-full h-auto md:h-[640px] flex flex-col-reverse md:flex-row items-center justify-center gap-[40px] lg:gap-[210px] py-10">
             {/* Left Side Content */}
             <motion.div
@@ -81,7 +81,7 @@ const page = () => {
 
             {/* Text Section */}
             <div className="w-full lg:w-1/2 p-6 lg:p-10">
-              <h3 className="text-[24px] md:text-[48px] font-semibold font-primary text-[#AD4027] mx-2 md:mx-0">
+              <h3 className="text-[24px] md:text-[34px] font-semibold font-primary text-[#AD4027] mx-2 md:mx-0">
                 Field Trips
               </h3>
               <p className="text-[#AD4027] text-[18px] mt-4 mx-2 md:mx-0 font-secondary font-normal">
@@ -103,7 +103,7 @@ const page = () => {
           >
             {/* Text Section */}
             <div className="relative z-10 w-full lg:w-[60%] p-6 lg:p-18">
-              <h3 className="text-[24px] md:text-[48px] text-end md:text-start font-primary font-semibold text-[#669E6E]">
+              <h3 className="text-[24px] md:text-[34px] text-end md:text-start font-primary font-semibold text-[#669E6E]">
                 Workshops
               </h3>
               <p className="text-[#669E6E] mt-4 text-end md:text-start font-secondary font-normal">
@@ -147,7 +147,7 @@ const page = () => {
 
             {/* Text Section */}
             <div className="w-full lg:w-1/2 p-6 lg:p-10">
-              <h3 className="text-[24px] md:text-[48px] font-semibold font-primary text-[#8363A9] mx-2 md:mx-0">
+              <h3 className="text-[24px] md:text-[34px] font-semibold font-primary text-[#8363A9] mx-2 md:mx-0">
                 Guest Lectures
               </h3>
               <p className="text-[#8363A9] text-[18px] mt-4 mx-2 md:mx-0 font-secondary font-normal">
@@ -169,7 +169,7 @@ const page = () => {
           >
             {/* Text Section */}
             <div className="relative z-10 w-full lg:w-[60%] p-6 lg:p-18">
-              <h3 className="text-[24px] md:text-[48px] text-end md:text-start font-primary font-semibold text-[#B28842]">
+              <h3 className="text-[24px] md:text-[34px] text-end md:text-start font-primary font-semibold text-[#B28842]">
                 Counselling
               </h3>
               <p className="text-[#B28842] mt-4 text-end md:text-start font-secondary font-normal">

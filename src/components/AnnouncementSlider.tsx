@@ -3,6 +3,8 @@
 import React from "react";
 import Slider from "react-slick";
 // import Image from "next/image";
+import Link from "next/link";
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Announcement = {
@@ -97,9 +99,11 @@ const AnnouncementSlider: React.FC = () => {
                   <p className="text-sm text-white mb-4 max-w-md font-secondary">
                     {announcement.description}
                   </p>
-                  <button className="bg-[#EE842C] hover:bg-orange-300 text-white text-sm px-5 py-2 rounded-md font-medium transition">
-                    Know More
-                  </button>
+                 <Link href="/contact">
+  <button className="bg-[#EE842C] hover:bg-orange-500 text-white text-sm px-5 py-2 rounded-md font-medium transition">
+    Know More
+  </button>
+</Link>
                 </div>
 
                 {/* Images */}
