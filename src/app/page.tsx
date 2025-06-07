@@ -142,7 +142,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            A Progressive and Futuristic Learning Platform
+            Smarter Learning. Deeper Living
           </motion.h3>
 
           <motion.p
@@ -151,10 +151,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            AuroGurukul is a transformative learning space inspired by the
-            philosophy of Sri Aurobindo and The Mother. We nurture future-ready
-            individuals by integrating academic excellence with inner
-            development, creativity, and real-world skills.
+            AuroGurukul is where innovation meets inner evolution. Inspired by the vision of The Mother and Sri Aurobindo, we fuse AI-powered learning with holistic development, shaping sharp minds, strong hearts, and purpose-driven lives for tomorrow’s world.
           </motion.p>
         </div>
       </section>

@@ -50,35 +50,35 @@ export default function Footer() {
         <div className="flex flex-col gap-3 items-center md:items-end text-center md:text-right">
           <div className="flex gap-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61577110350187"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebookF className="w-5 h-5 hover:text-blue-600 transition" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/AuroGurukul"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaTwitter className="w-5 h-5 hover:text-blue-400 transition" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/aurogurukul?igsh=MXNjbXZnbjU3OXNlMQ=="
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram className="w-5 h-5 hover:text-pink-500 transition" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/aurogurukul/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedinIn className="w-5 h-5 hover:text-blue-700 transition" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://youtube.com/@aurogurukul?si=jL2U8C_YiR_qD35y"
               target="_blank"
               rel="noopener noreferrer"
             >

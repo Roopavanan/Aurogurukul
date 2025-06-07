@@ -259,8 +259,8 @@ export default function HeroSection() {
           </h2>
 
           <p className="text-gray-700 font-secondary text-md mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet nisl tempus, ultrices mi in, finibus ligula.
+           Explore, experiment, and grow through guided learning.
+
           </p>
 
           <div className="flex justify-center gap-8 flex-wrap">
