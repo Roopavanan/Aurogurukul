@@ -24,18 +24,17 @@ export default function ChatWidget() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-
-  useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      setMessages([
-        {
-          type: 'bot',
-          text: "Hi there 👋 I'm VOCA — How can I help you?",
-          timestamp: getCurrentTimestamp(),
-        },
-      ]);
-    }
-  }, [isOpen]);
+useEffect(() => {
+  if (isOpen && messages.length === 0) {
+    setMessages([
+      {
+        type: 'bot',
+        text: "Hi there 👋 I'm VOCA — How can I help you?",
+        timestamp: getCurrentTimestamp(),
+      },
+    ]);
+  }
+}, [isOpen, messages.length]);
 
   const handleSendMessage = async (preset?: string) => {
     const userText = preset ?? input;
