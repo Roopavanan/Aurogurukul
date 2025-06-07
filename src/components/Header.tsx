@@ -38,7 +38,7 @@ export default function Header() {
     { label: "Grade 9 - 12", submenu: [], href: "/courses/grade-9-12" },
     { label: "Grade 1 - 3", submenu: [], href: "#" },
     { label: "Grade 4 - 8", submenu: [], href: "#" },
-        { label: "Master Programs", submenu: [], href: "#" },
+        { label: "Master's Program", submenu: [], href: "#" },
 
   ];
 
