@@ -30,16 +30,15 @@ export default function Header() {
     { label: "Resources", href: "/resources" },
     { label: "Skill Development", href: "/skill-development" },
     { label: "About Us", href: "/about" },
-    { label: "Gallery", href: "/#gallery" },
-    { label: "Careers", href: "/#careers" }
+    { label: "Gallery", href: "/gallery" },
+    { label: "Careers", href: "/careers" }
   ];
 
   const courseDropdown: CourseDropdownItem[] = [
     { label: "Grade 9 - 12", submenu: [], href: "/courses/grade-9-12" },
     { label: "Grade 1 - 3", submenu: [], href: "#" },
     { label: "Grade 4 - 8", submenu: [], href: "#" },
-        { label: "Master's Program", submenu: [], href: "#" },
-
+    { label: "Master's Program", submenu: [], href: "#" }
   ];
 
   useEffect(() => {
@@ -73,7 +72,10 @@ export default function Header() {
     <header className="w-full px-4 md:px-10 py-4 bg-white sticky top-0 z-50">
       <div className="max-w-[1600px] w-full mx-auto flex items-center justify-between flex-wrap">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 min-w-0 overflow-hidden">
+        <Link
+          href="/"
+          className="flex items-center gap-2 min-w-0 overflow-hidden"
+        >
           <Image
             src="/images/logo.svg"
             alt="Aurogurukul Logo"
@@ -82,8 +84,12 @@ export default function Header() {
             className="w-20 h-10 md:w-25 md:h-15 object-contain"
           />
           <div className="leading-tight whitespace-nowrap">
-            <span className="text-[#6EA1D6] font-bold text-lg">AUROGURUKUL</span>
-            <div className="text-xs text-[#214586] font-semibold text-center">JOY OF LEARNING</div>
+            <span className="text-[#6EA1D6] font-bold text-lg">
+              AUROGURUKUL
+            </span>
+            <div className="text-xs text-[#214586] font-semibold text-center">
+              JOY OF LEARNING
+            </div>
           </div>
         </Link>
 
@@ -104,42 +110,50 @@ export default function Header() {
               Courses <IoIosArrowDown className="mt-[2px]" />
             </button>
 
-           {coursesOpen && (
-  <div
-    ref={dropdownRef}
-    className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-60 z-50"
-  >
-    {courseDropdown.map(({ label, href }) => {
-      const isComingSoon = label === "Grade 1 - 3" || label === "Grade 4 - 8" || label ==="Master's Program";
-      return (
-        <div
-          key={label}
-          className={`relative group px-4 py-2 text-sm ${
-            isComingSoon ? "text-gray-400 cursor-not-allowed opacity-50" : "text-[#214586] hover:bg-gray-100"
-          }`}
-        >
-          {isComingSoon ? (
-            <div className="flex justify-between items-center">
-              <span>{label}</span>
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
-                Coming Soon
-              </span>
-            </div>
-          ) : (
-            <Link href={href!} className="block w-full">
-              {label}
-            </Link>
-          )}
-        </div>
-      );
-    })}
-  </div>
-)}
-
+            {coursesOpen && (
+              <div
+                ref={dropdownRef}
+                className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-60 z-50"
+              >
+                {courseDropdown.map(({ label, href }) => {
+                  const isComingSoon =
+                    label === "Grade 1 - 3" ||
+                    label === "Grade 4 - 8" ||
+                    label === "Master's Program";
+                  return (
+                    <div
+                      key={label}
+                      className={`relative group px-4 py-2 text-sm ${
+                        isComingSoon
+                          ? "text-gray-400 cursor-not-allowed opacity-50"
+                          : "text-[#214586] hover:bg-gray-100"
+                      }`}
+                    >
+                      {isComingSoon ? (
+                        <div className="flex justify-between items-center">
+                          <span>{label}</span>
+                          <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                            Coming Soon
+                          </span>
+                        </div>
+                      ) : (
+                        <Link href={href!} className="block w-full">
+                          {label}
+                        </Link>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {navItems.map(({ label, href }) => (
-            <Link key={label} href={href} className="hover:text-[#6EA1D6] transition">
+            <Link
+              key={label}
+              href={href}
+              className="hover:text-[#6EA1D6] transition"
+            >
               {label}
             </Link>
           ))}
@@ -167,7 +181,11 @@ export default function Header() {
             strokeWidth={2}
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
@@ -187,7 +205,9 @@ export default function Header() {
           >
             Courses
             <IoIosArrowDown
-              className={`transform transition-transform ${mobileCoursesOpen ? "rotate-180" : ""}`}
+              className={`transform transition-transform ${
+                mobileCoursesOpen ? "rotate-180" : ""
+              }`}
             />
           </button>
 
